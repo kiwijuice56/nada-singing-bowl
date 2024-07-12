@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://ct428xyl1jgu0"]
+
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_85h0l"]
+[ext_resource type="Shader" uid="uid://d11frphmksrto" path="res://main/visuals/session_visual/528_hz.tres" id="1_ve6xa"]
+[ext_resource type="AudioStream" uid="uid://bsex0s3wf0siv" path="res://main/audio/presets/528_hz/528_hz_sustain.ogg" id="3_1ylhh"]
+[ext_resource type="AudioStream" uid="uid://nwdj2mo25co0" path="res://main/audio/presets/528_hz/528_hz_transition_in.ogg" id="4_rq06w"]
+[ext_resource type="AudioStream" uid="uid://bkdbuabedvu41" path="res://main/audio/presets/528_hz/528_hz_transition_out.ogg" id="5_jv4wr"]
+
+[resource]
+script = ExtResource("1_85h0l")
+transition_in = ExtResource("4_rq06w")
+transition_out = ExtResource("5_jv4wr")
+sustain = ExtResource("3_1ylhh")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Solar Plexus Chakra"
+description = "For stress reduction and cellular repair, the “love frequency”"
+color_1 = Color(0.741176, 0.517647, 0.156863, 1)
+color_2 = Color(0.521569, 0.231373, 0.0431373, 1)
+frequency = 528
+fractal = ExtResource("1_ve6xa")

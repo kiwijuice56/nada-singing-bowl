@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://ddmccfnuwlvi3"]
+
+[ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="1_fb625"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_cyf0r"]
+[ext_resource type="AudioStream" uid="uid://cybxgh37c8i0e" path="res://main/audio/presets/285_hz/285_hz_sustain.ogg" id="3_runw6"]
+[ext_resource type="AudioStream" uid="uid://cxfne15omwoqe" path="res://main/audio/presets/285_hz/285_hz_transition_in.ogg" id="4_shvtl"]
+[ext_resource type="AudioStream" uid="uid://dat8w6kogq8o" path="res://main/audio/presets/285_hz/285_hz_transition_out.ogg" id="5_1j556"]
+
+[resource]
+script = ExtResource("2_cyf0r")
+transition_in = ExtResource("4_shvtl")
+transition_out = ExtResource("5_1j556")
+sustain = ExtResource("3_runw6")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Special Solfeggio"
+description = "For physical health and immune system"
+color_1 = Color(0.298039, 0.0392157, 0.121569, 1)
+color_2 = Color(0.121569, 0.00392157, 0.0156863, 1)
+color_3 = Color(0, 0, 0, 1)
+color_4 = Color(0, 0, 0, 1)
+frequency = 285
+fractal = ExtResource("1_fb625")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://blwmd7u688yg"]
+
+[ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_lqy8q"]
+[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/BowlSelector.gd" id="2_3faxb"]
+[ext_resource type="PackedScene" uid="uid://deibi4wa7vkqn" path="res://main/user_interface/menu/settings_menu/BowlOption.tscn" id="3_qwrpd"]
+[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="4_3qim5"]
+[ext_resource type="AudioStream" uid="uid://dd5k10o7hduvd" path="res://main/audio/sound_effects/tap1.ogg" id="5_lgv4j"]
+[ext_resource type="AudioStream" uid="uid://cwcbwjyjp4icr" path="res://main/audio/sound_effects/tap2.ogg" id="6_sf2ix"]
+[ext_resource type="AudioStream" uid="uid://0mif8x7f7s57" path="res://main/audio/sound_effects/tap3.ogg" id="7_7uiqb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4y5j"]
+shader = ExtResource("4_3qim5")
+shader_parameter/inner_radius = 0.0
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bahk5"]
+random_pitch = 1.4
+streams_count = 3
+stream_0/stream = ExtResource("5_lgv4j")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_sf2ix")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_7uiqb")
+stream_2/weight = 1.0
+
+[node name="BowlSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lqy8q")
+script = ExtResource("2_3faxb")
+bowl_option_scene = ExtResource("3_qwrpd")
+vertical_offset = -32.0
+radius_increase = 156.0
+
+[node name="Internal" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectHole" type="ColorRect" parent="Internal"]
+modulate = Color(1, 1, 1, 0.0901961)
+material = SubResource("ShaderMaterial_a4y5j")
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -75.0
+offset_right = 95.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(95, 95)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Internal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="SettingTitle" type="Label" parent="Internal/VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Singing Bowl Configuration"
+
+[node name="BowlDescription" type="RichTextLabel" parent="Internal/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1080, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "[center]Sun Plexus Chakra: Loolrem ldkfjksdfl Ispulmd fLSljd f jldfslj sdkljflkd;fjsd fkdlf sjkldfjls;kdflkj[/center]"
+fit_content = true
+
+[node name="ChimePlayer" type="AudioStreamPlayer" parent="Internal"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_bahk5")
+volume_db = -18.0
+pitch_scale = 2.0

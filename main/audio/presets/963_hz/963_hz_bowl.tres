@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://cbboosmrw7jvp"]
+
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_a2dfa"]
+[ext_resource type="Shader" uid="uid://dqsr5tdnsa024" path="res://main/visuals/session_visual/963_hz.tres" id="1_ddur8"]
+[ext_resource type="AudioStream" uid="uid://c8y5wsht0hg68" path="res://main/audio/presets/963_hz/963_hz_sustain.ogg" id="3_uomti"]
+[ext_resource type="AudioStream" uid="uid://dcvu7eo3j2uqi" path="res://main/audio/presets/963_hz/963_hz_transition_in.ogg" id="4_npmtv"]
+[ext_resource type="AudioStream" uid="uid://cumeki5245a0k" path="res://main/audio/presets/963_hz/963_hz_transition_out.ogg" id="5_b5et0"]
+
+[resource]
+script = ExtResource("1_a2dfa")
+transition_in = ExtResource("4_npmtv")
+transition_out = ExtResource("5_b5et0")
+sustain = ExtResource("3_uomti")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Crown Chakra"
+description = "For enlightenment and awakening subconscious, pineal gland activation"
+color_1 = Color(0.658824, 0.278431, 0.631373, 1)
+color_2 = Color(0.45098, 0.160784, 0.411765, 1)
+color_3 = Color(0, 0, 0, 1)
+color_4 = Color(0, 0, 0, 1)
+frequency = 963
+fractal = ExtResource("1_ddur8")

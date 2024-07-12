@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://df1dlrhhb6elh"]
+
+[ext_resource type="Shader" uid="uid://d4sj0yuhk40x" path="res://main/visuals/session_visual/Bineural.tres" id="1_hosna"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_mdyeu"]
+[ext_resource type="AudioStream" uid="uid://sydbwaf3a1n4" path="res://main/audio/presets/2_hz/delta_sustain.ogg" id="3_scytk"]
+[ext_resource type="AudioStream" uid="uid://3gow2bxc6hsc" path="res://main/audio/presets/2_hz/delta_transition_in.ogg" id="4_pu5vn"]
+[ext_resource type="AudioStream" uid="uid://b7p8rv3o3vdjc" path="res://main/audio/presets/2_hz/delta_transition_out.ogg" id="5_lftl4"]
+
+[resource]
+script = ExtResource("2_mdyeu")
+transition_in = ExtResource("4_pu5vn")
+transition_out = ExtResource("5_lftl4")
+sustain = ExtResource("3_scytk")
+in_trim_length = 3.0
+end_trim_length = 7.0
+display_name = "Delta Waves (Binaural)"
+description = "Deep sleep. Headphones recommended"
+color_1 = Color(0.478431, 0.164706, 0.27451, 1)
+color_2 = Color(0.301961, 0.105882, 0.282353, 1)
+color_3 = Color(0.301961, 0.105882, 0.282353, 1)
+color_4 = Color(0.478431, 0.164706, 0.27451, 1)
+frequency = 2
+fractal = ExtResource("1_hosna")

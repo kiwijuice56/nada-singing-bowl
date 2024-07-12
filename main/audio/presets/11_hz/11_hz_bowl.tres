@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://s5c6f2t8w5b1"]
+
+[ext_resource type="Shader" uid="uid://d4sj0yuhk40x" path="res://main/visuals/session_visual/Bineural.tres" id="1_t4318"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_mdcoe"]
+[ext_resource type="AudioStream" uid="uid://c65xkjkiojdlu" path="res://main/audio/presets/11_hz/alpha_sustain.ogg" id="3_6giu6"]
+[ext_resource type="AudioStream" uid="uid://cb76468wxxvpg" path="res://main/audio/presets/11_hz/alpha_transition_in.ogg" id="4_w24uk"]
+[ext_resource type="AudioStream" uid="uid://c7xnx2wnahb7g" path="res://main/audio/presets/11_hz/alpha_transition_out.ogg" id="5_dsfbo"]
+
+[resource]
+script = ExtResource("2_mdcoe")
+transition_in = ExtResource("4_w24uk")
+transition_out = ExtResource("5_dsfbo")
+sustain = ExtResource("3_6giu6")
+in_trim_length = 3.0
+end_trim_length = 7.0
+display_name = "Alpha Waves (Binaural)"
+description = "Relaxation, passive attention. Headphones recommended"
+color_1 = Color(0.552941, 0.729412, 0.305882, 1)
+color_2 = Color(0.160784, 0.470588, 0.266667, 1)
+color_3 = Color(0.160784, 0.470588, 0.266667, 1)
+color_4 = Color(0.552941, 0.729412, 0.305882, 1)
+frequency = 11
+fractal = ExtResource("1_t4318")

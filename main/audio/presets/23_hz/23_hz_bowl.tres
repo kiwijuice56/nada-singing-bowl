@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://ca6sq2a66avry"]
+
+[ext_resource type="Shader" uid="uid://d4sj0yuhk40x" path="res://main/visuals/session_visual/Bineural.tres" id="1_t327l"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_r6xi0"]
+[ext_resource type="AudioStream" uid="uid://mmpoxxyurqxi" path="res://main/audio/presets/23_hz/beta_sustain.ogg" id="3_dhvm0"]
+[ext_resource type="AudioStream" uid="uid://pbom164bp0h7" path="res://main/audio/presets/23_hz/beta_transition_in.ogg" id="4_6sanu"]
+[ext_resource type="AudioStream" uid="uid://yis6jenhduqx" path="res://main/audio/presets/23_hz/beta_transition_out.ogg" id="5_cn7i2"]
+
+[resource]
+script = ExtResource("2_r6xi0")
+transition_in = ExtResource("4_6sanu")
+transition_out = ExtResource("5_cn7i2")
+sustain = ExtResource("3_dhvm0")
+in_trim_length = 3.0
+end_trim_length = 7.0
+display_name = "Beta Waves (Binaural)"
+description = "Active mind, external attention. Headphones recommended"
+color_1 = Color(0.388235, 0.698039, 0.721569, 1)
+color_2 = Color(0.172549, 0.243137, 0.611765, 1)
+color_3 = Color(0.172549, 0.243137, 0.611765, 1)
+color_4 = Color(0.388235, 0.698039, 0.721569, 1)
+frequency = 23
+fractal = ExtResource("1_t327l")

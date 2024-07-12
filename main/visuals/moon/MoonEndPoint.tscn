@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://8akykxqykoin"]
+
+[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="1_ifyux"]
+[ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="2_cg88r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbyst"]
+shader = ExtResource("1_ifyux")
+shader_parameter/inner_radius = 0.47
+
+[node name="MoonEndPoint" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.262745)
+material = SubResource("ShaderMaterial_dbyst")
+scale = Vector2(7, 7)
+texture = ExtResource("2_cg88r")

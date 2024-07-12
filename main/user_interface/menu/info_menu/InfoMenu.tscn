@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgibjwad0y0hn"]
+
+[ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_3xyj8"]
+[ext_resource type="Script" path="res://main/user_interface/menu/info_menu/InfoMenu.gd" id="2_c8cnj"]
+[ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="3_4gcxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fqx5"]
+
+[node name="InfoMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3xyj8")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1fqx5")
+script = ExtResource("2_c8cnj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -64
+theme_override_font_sizes/font_size = 100
+text = "
+About
+
+"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Title1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "Design"
+horizontal_alignment = 1
+
+[node name="Description1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 24
+text = "This mobile app was created by Eric Alfaro, under the guidance of Dr. Richard Ribon Fletcher, with the support of the MIT Undergraduate Research Opportunities Program. This project explores the use of sound and visualizations as tools for meditation and psychotherapy.
+
+The sounds used in this mobile app were manually recorded from actual Himalayan singing bowls, and each recording was digitally tuned to match the exact Solfeggio frequencies and binaural beat frequencies. 
+
+"
+autowrap_mode = 2
+
+[node name="Title2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "Sound Therapy"
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 24
+text = "The set of Solfeggio frequencies commonly used for sound therapy have origins in Western music dating back to 8th Century Gregorian chants. The choice of the specific frequency values were influenced in part by numerology and popularized by Joseph Puleo in the 1970s.
+
+The general use of sound for physical and psychological healing, however, is a much older concept dating back thousands of years to the ancient sacred Indian Vedic texts, which prescribe chanting and mantras for health and healing, incorporating both vocal and instrumental vibration. Nāda is a Sanskrit word meaning \"sound\", \"tone\", or \"stream of consciousness.\" In yoga, Nāda is the \"inner sound\" that reflects the union of consciousness and energy.
+
+Modern neuroscience has begun to explore the therapeutic use of sound for the brain and body.  Neuromodulation through sound stimulation is an active area of research, and includes new forms of stereo sounds, such as binaural beats, which couple to different brain wave frequencies (alpha, beta, gamma, theta, and delta) that serve different roles, such as providing clarity and focus or inducing relaxation."
+autowrap_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("3_4gcxq")

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://cpcmscuma524t"]
+
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_xifi8"]
+[ext_resource type="Shader" uid="uid://fqa6eaghycmj" path="res://main/visuals/session_visual/852_hz.tres" id="1_xo1og"]
+[ext_resource type="AudioStream" uid="uid://bf82strdx6m32" path="res://main/audio/presets/852_hz/852_hz_sustain.ogg" id="3_pwq6i"]
+[ext_resource type="AudioStream" uid="uid://dm61ut26qebro" path="res://main/audio/presets/852_hz/852_hz_transition_in.ogg" id="4_wlb52"]
+[ext_resource type="AudioStream" uid="uid://b7hq71a00nkrj" path="res://main/audio/presets/852_hz/852_hz_transition_out.ogg" id="5_hqky5"]
+
+[resource]
+script = ExtResource("1_xifi8")
+transition_in = ExtResource("4_wlb52")
+transition_out = ExtResource("5_hqky5")
+sustain = ExtResource("3_pwq6i")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Third Eye Chakra"
+description = "For connecting to your spiritual side and expanding intuition"
+color_1 = Color(0.494118, 0.278431, 0.631373, 1)
+color_2 = Color(0.282353, 0.160784, 0.411765, 1)
+frequency = 852
+fractal = ExtResource("1_xo1og")

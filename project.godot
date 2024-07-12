@@ -1,0 +1,71 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Nāda: Singing Bowl Meditation"
+config/version="11"
+run/main_scene="res://main/Main.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://promotional/app_icon.png"
+
+[audio]
+
+buses/default_bus_layout="res://main/audio/default_bus_layout.tres"
+
+[debug]
+
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/integer_division=0
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=2560
+window/size/window_width_override=675
+window/size/window_height_override=1200
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="meditation-app"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[file_customization]
+
+folder_colors={
+"res://main/audio/": "green",
+"res://main/visuals/session_visual/": "orange"
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+
+[shader_globals]
+
+app_hue={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}

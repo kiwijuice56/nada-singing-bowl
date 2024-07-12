@@ -1,0 +1,106 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c3nu6i7da3wrw"]
+
+[ext_resource type="FontFile" uid="uid://h7yr3buncrhq" path="res://main/user_interface/font/Poppins-Regular.ttf" id="1_d7723"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oillf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.321569, 0.301961, 0.380392, 0.784314)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm38q"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.172549, 0.156863, 0.219608, 0.764706)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hobsx"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.101961, 0.0941176, 0.121569, 0.784314)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 0.129412)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Gradient" id="Gradient_yuakr"]
+offsets = PackedFloat32Array(0.0171429, 0.990769)
+colors = PackedColorArray(0.45098, 0.45098, 0.45098, 0.231373, 1, 1, 1, 0.309804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_om21y"]
+gradient = SubResource("Gradient_yuakr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ta7fw"]
+texture = SubResource("GradientTexture2D_om21y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm1yt"]
+content_margin_top = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.172549, 0.156863, 0.219608, 0.764706)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxbk0"]
+texture = SubResource("GradientTexture2D_om21y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4p3s"]
+content_margin_top = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0, 0, 0, 0.372549)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Gradient" id="Gradient_ga5o1"]
+offsets = PackedFloat32Array(0.0171429, 0.990769)
+colors = PackedColorArray(0.45098, 0.45098, 0.45098, 0.231373, 1, 1, 1, 0.309804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jikpn"]
+gradient = SubResource("Gradient_ga5o1")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3k7q5"]
+texture = SubResource("GradientTexture2D_jikpn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5fj2"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.172549, 0.156863, 0.219608, 0.619608)
+
+[sub_resource type="FontVariation" id="FontVariation_nllcr"]
+base_font = ExtResource("1_d7723")
+
+[resource]
+default_base_scale = 16.0
+default_font = SubResource("FontVariation_nllcr")
+default_font_size = 64
+Button/styles/hover = SubResource("StyleBoxFlat_oillf")
+Button/styles/normal = SubResource("StyleBoxFlat_qm38q")
+Button/styles/pressed = SubResource("StyleBoxFlat_hobsx")
+HScrollBar/styles/grabber = SubResource("StyleBoxTexture_ta7fw")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ta7fw")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ta7fw")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_cm1yt")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_kxbk0")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_kxbk0")
+HSlider/styles/slider = SubResource("StyleBoxFlat_l4p3s")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_3k7q5")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_3k7q5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_3k7q5")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_y5fj2")

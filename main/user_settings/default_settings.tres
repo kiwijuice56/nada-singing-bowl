@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UserSettings" load_steps=2 format=3 uid="uid://rhbmskeer3au"]
+
+[ext_resource type="Script" path="res://main/user_settings/UserSettings.gd" id="1_qjnfb"]
+
+[resource]
+script = ExtResource("1_qjnfb")
+version = ""
+volume = 0.0
+session_duration = 120.0
+bowl_type = 14
+first_opened_app = true

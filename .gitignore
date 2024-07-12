@@ -1,0 +1,9 @@
+.godot/
+android/*
+*.apk
+*.idsig
+export_presets.cfg
+harmonic_resonance_keystore.jks
+harmonic_resonance_keystore_password.txt
+*.aab
+release/*

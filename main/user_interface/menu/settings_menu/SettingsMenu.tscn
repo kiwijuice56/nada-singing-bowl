@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyt47kwsgktw2"]
+
+[ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_7pyh1"]
+[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/SettingsMenu.gd" id="2_c1okb"]
+[ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="3_lsd8h"]
+[ext_resource type="Texture2D" uid="uid://b0wdylpv3tbne" path="res://main/user_interface/icons/circle.png" id="3_ty2te"]
+[ext_resource type="PackedScene" uid="uid://blwmd7u688yg" path="res://main/user_interface/menu/settings_menu/BowlSelector.tscn" id="5_ntpyq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fqx5"]
+
+[node name="SettingsMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_7pyh1")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1fqx5")
+script = ExtResource("2_c1okb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/line_spacing = -64
+theme_override_font_sizes/font_size = 100
+text = "
+Settings
+
+"
+horizontal_alignment = 1
+
+[node name="SessionDurationContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingTitle" type="Label" parent="MarginContainer/VBoxContainer/SessionDurationContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Session Length"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SessionDurationContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DurationSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("3_ty2te")
+theme_override_icons/grabber_highlight = ExtResource("3_ty2te")
+theme_override_icons/grabber_disabled = ExtResource("3_ty2te")
+theme_override_icons/tick = ExtResource("3_ty2te")
+min_value = 90.0
+max_value = 1800.0
+step = 15.0
+value = 90.0
+exp_edit = true
+allow_lesser = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Short"
+
+[node name="RightLabel" type="Label" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Long"
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/SessionDurationContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(172, 0)
+layout_mode = 2
+text = "3:00"
+horizontal_alignment = 1
+
+[node name="VolumeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SettingTitle" type="Label" parent="MarginContainer/VBoxContainer/VolumeContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 24
+
+[node name="DummyLabel" type="Label" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(172, 0)
+layout_mode = 2
+text = "30:00"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("3_ty2te")
+theme_override_icons/grabber_highlight = ExtResource("3_ty2te")
+theme_override_icons/grabber_disabled = ExtResource("3_ty2te")
+theme_override_icons/tick = ExtResource("3_ty2te")
+min_value = -16.0
+max_value = 6.0
+allow_lesser = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Low"
+
+[node name="RightLabel" type="Label" parent="MarginContainer/VBoxContainer/VolumeContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "High"
+
+[node name="ExitButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("3_lsd8h")
+
+[node name="BowlSelector" parent="." instance=ExtResource("5_ntpyq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+drag_speed = 20.0
+response_speed = 18.0

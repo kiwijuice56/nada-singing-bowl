@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://d3j4f73bm5k16"]
+
+[ext_resource type="Shader" uid="uid://d4sj0yuhk40x" path="res://main/visuals/session_visual/Bineural.tres" id="1_6kysk"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_jfi4m"]
+[ext_resource type="AudioStream" uid="uid://buw531k8tjysj" path="res://main/audio/presets/40_hz/gamma_sustain.ogg" id="3_r4u23"]
+[ext_resource type="AudioStream" uid="uid://ci4lnqlnhha6u" path="res://main/audio/presets/40_hz/gamma_transition_in.ogg" id="4_mrom3"]
+[ext_resource type="AudioStream" uid="uid://bjgu6hm4cvic2" path="res://main/audio/presets/40_hz/gamma_transition_out.ogg" id="5_ds16k"]
+
+[resource]
+script = ExtResource("2_jfi4m")
+transition_in = ExtResource("4_mrom3")
+transition_out = ExtResource("5_ds16k")
+sustain = ExtResource("3_r4u23")
+in_trim_length = 3.0
+end_trim_length = 6.0
+display_name = "Gamma Waves (Binaural)"
+description = "Concentration, heightened perception. Headphones recommended"
+color_1 = Color(0.729412, 0.462745, 0.768627, 1)
+color_2 = Color(0.415686, 0.203922, 0.54902, 1)
+color_3 = Color(0.415686, 0.203922, 0.54902, 1)
+color_4 = Color(0.729412, 0.462745, 0.768627, 1)
+frequency = 40
+fractal = ExtResource("1_6kysk")

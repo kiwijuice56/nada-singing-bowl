@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://bvy75p143q2bu"]
+
+[ext_resource type="Shader" uid="uid://d2aa1qamqmmih" path="res://main/visuals/session_visual/417_hz.tres" id="1_50j1x"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_iahqq"]
+[ext_resource type="AudioStream" uid="uid://vokm1nfvvlak" path="res://main/audio/presets/432_hz/432_hz_sustain.ogg" id="3_qqfob"]
+[ext_resource type="AudioStream" uid="uid://c32j1tlrmmfqt" path="res://main/audio/presets/432_hz/432_hz_transition_in.ogg" id="4_0ys7w"]
+[ext_resource type="AudioStream" uid="uid://ch3153avhx5si" path="res://main/audio/presets/432_hz/432_hz_transition_out.ogg" id="5_uc3lq"]
+
+[resource]
+script = ExtResource("2_iahqq")
+transition_in = ExtResource("4_0ys7w")
+transition_out = ExtResource("5_uc3lq")
+sustain = ExtResource("3_qqfob")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Special Solfeggio"
+description = "For general physical health and balance, improving creativity and memory"
+color_1 = Color(0.631373, 0.345098, 0.12549, 1)
+color_2 = Color(0.478431, 0.192157, 0.0862745, 1)
+color_3 = Color(0, 0, 0, 1)
+color_4 = Color(0, 0, 0, 1)
+frequency = 432
+fractal = ExtResource("1_50j1x")

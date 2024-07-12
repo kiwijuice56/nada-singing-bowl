@@ -1,0 +1,83 @@
+[gd_resource type="Shader" format=3 uid="uid://dl4c31dto0lel"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform vec2 uv_offset;
+uniform float time = 0.0;
+uniform float aspect_ratio = 1.0;
+uniform float color_intensity = 1.0;
+uniform float scale = 1.0;
+uniform float border = 0.1;
+uniform float audio1 = 0.0;
+
+vec2 sinusoidal(vec2 c, float offset) {
+	c.x = sin(c.x + offset);
+	c.y = sin(c.y + offset);
+	return c;
+}
+
+vec2 spherical(vec2 c, float offset) {
+	vec2 t = c;
+	c.x = c.x / (c.x * c.x + c.y * c.y) + offset;
+	c.y = c.y / (t.x * t.x + t.y * t.y) + offset;
+	return c;
+}
+
+vec2 julia(vec2 c, vec2 p) {
+	int i = 0;
+	for (; i < 16; i++) {
+		if (c.x * c.x + c.y * c.y > 4.0) {
+			break;
+		}
+		float t = c.x * c.x - c.y * c.y + p.x;
+		c.y = 2.0 * c.x * c.y + p.y;
+		c.x = t;
+	}
+	
+	float modulus = sqrt(c.x * c.x + c.y * c.y);
+	float mu = max(0, (float(i) - log(log(modulus)) / log(2.0))) / 16.0;
+	
+	return c * vec2(mu);
+}
+
+void fragment() {
+	vec2 c = UV;
+	
+	if (UV.y < border) {
+		COLOR.a = c.y / border;
+	}
+	
+	// Setup the coordinate system.
+	c += uv_offset; 
+	c -= vec2(0.5, 0.5);
+	c *= scale;
+	c.x *= aspect_ratio;
+	
+	// Apply functions randomly.
+	c = sinusoidal(c, 0.0);
+	c = spherical(c, time);
+	
+	c = sinusoidal(c, c.x / 128.0);
+	
+	
+	c = sinusoidal(c, time * 3.0 - 1.0);
+	c = spherical(c, audio1 * 0.6);
+	vec2 d = c;
+	c = sinusoidal(c, time);
+	c = julia(c, c);
+	
+	vec3 a = vec3(74, 210, 249) / 255.0;
+	vec3 b = vec3(17, 8, 94) / 255.0;
+	
+	// Turn the final coordinate into a color.
+	float z = sqrt(c.x * c.x + c.y * c.y);
+	COLOR.rgb = a * z + b * (1.0 - z);
+	COLOR.b *= pow(color_intensity, 0.7);
+	COLOR.r *= color_intensity;
+	COLOR.g *= color_intensity;
+	COLOR += 0.4 * vec4(0.3, 0.8, 0.8, 1.0) * d.x * d.x *  color_intensity;
+	
+	//COLOR.rgb *= vec3(c.x, c.y, 1.0) * color_intensity;
+}"
+metadata/_edit_res_path = "res://main/visuals/JuliaFractal.tres"

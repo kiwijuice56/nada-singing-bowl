@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://pyebb3avgmog"]
+
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_1ng46"]
+[ext_resource type="Shader" uid="uid://ojkwais2uwx7" path="res://main/visuals/session_visual/639_hz.tres" id="1_5sa5l"]
+[ext_resource type="AudioStream" uid="uid://nm77t0c6lb8m" path="res://main/audio/presets/639_hz/639_hz_sustain.ogg" id="3_24gw7"]
+[ext_resource type="AudioStream" uid="uid://din71tl4hlhso" path="res://main/audio/presets/639_hz/639_hz_transition_in.ogg" id="4_cg3g4"]
+[ext_resource type="AudioStream" uid="uid://062m7etro1lx" path="res://main/audio/presets/639_hz/639_hz_transition_out.ogg" id="5_7jg8j"]
+
+[resource]
+script = ExtResource("1_1ng46")
+transition_in = ExtResource("4_cg3g4")
+transition_out = ExtResource("5_7jg8j")
+sustain = ExtResource("3_24gw7")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Heart Chakra"
+description = "For improving communications and relationships, healing trauma"
+color_1 = Color(0.254902, 0.631373, 0.215686, 1)
+color_2 = Color(0.0352941, 0.368627, 0.215686, 1)
+frequency = 639
+fractal = ExtResource("1_5sa5l")

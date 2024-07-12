@@ -1,0 +1,160 @@
+[gd_scene load_steps=13 format=3 uid="uid://deibi4wa7vkqn"]
+
+[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="1_kteql"]
+[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/BowlOption.gd" id="2_6psn7"]
+[ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="2_7wq25"]
+[ext_resource type="Texture2D" uid="uid://dnp0clx07akta" path="res://main/visuals/light_map.png" id="3_yrtrq"]
+[ext_resource type="Texture2D" uid="uid://u66khfhbcfq4" path="res://main/visuals/shadow_map.png" id="4_pw6wv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lr7ui"]
+shader = ExtResource("1_kteql")
+shader_parameter/inner_radius = 0.0
+shader_parameter/color_top = Color(0.32549, 0.235294, 0.411765, 1)
+shader_parameter/color_bottom = Color(0.160784, 0.113725, 0.219608, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8mfpy"]
+shader = ExtResource("1_kteql")
+shader_parameter/inner_radius = 0.48
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = true
+
+[sub_resource type="Curve" id="Curve_s8dcn"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.662105, 0.905797), 0.594217, 0.594217, 0, 0, Vector2(1, 0.986542), -0.0402666, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_0ul1n"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4qsd"]
+shader = ExtResource("1_kteql")
+shader_parameter/inner_radius = 0.48
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = false
+
+[sub_resource type="Curve" id="Curve_hf0p7"]
+_data = [Vector2(0, 0.672452), 0.0, 0.0, 0, 0, Vector2(1, 1), -0.0402666, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1cdym"]
+offsets = PackedFloat32Array(0, 0.0989011, 0.266484, 0.450549, 0.675824, 1)
+colors = PackedColorArray(1, 0.611765, 1, 0, 1, 0.611765, 1, 0.631373, 1, 1, 0.631373, 0.54902, 0.729412, 1, 1, 0.54902, 1, 1, 1, 0.352941, 1, 1, 1, 0)
+
+[node name="BowlOption" type="ColorRect"]
+z_index = 4
+material = SubResource("ShaderMaterial_lr7ui")
+custom_minimum_size = Vector2(190, 190)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -95.0
+offset_right = 95.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(95, 95)
+script = ExtResource("2_6psn7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.0235294)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -225.0
+offset_right = 225.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 225)
+texture = ExtResource("3_yrtrq")
+
+[node name="ShadowTextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.698039)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -207.0
+offset_right = 217.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(225, 225)
+texture = ExtResource("4_pw6wv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.227451)
+material = SubResource("ShaderMaterial_8mfpy")
+position = Vector2(95, 95)
+amount = 2
+preprocess = 16.0
+speed_scale = 0.1
+local_coords = true
+texture = ExtResource("2_7wq25")
+gravity = Vector2(0, 0)
+scale_amount_min = 12.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_s8dcn")
+color_ramp = SubResource("Gradient_0ul1n")
+
+[node name="SelectedParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("ShaderMaterial_p4qsd")
+position = Vector2(95, 95)
+emitting = false
+amount = 2
+lifetime = 4.0
+speed_scale = 3.0
+local_coords = true
+texture = ExtResource("2_7wq25")
+gravity = Vector2(0, 0)
+scale_amount_min = 19.0
+scale_amount_max = 19.0
+scale_amount_curve = SubResource("Curve_hf0p7")
+color_ramp = SubResource("Gradient_1cdym")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -33.5
+offset_right = 0.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true

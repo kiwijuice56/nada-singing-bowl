@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1xieystjlnaj"]
+
+[ext_resource type="Shader" path="res://main/visuals/moon/Eclipse.gdshader" id="1_ymc53"]
+[ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="2_s343o"]
+[ext_resource type="Script" path="res://main/visuals/moon/ProgressMoon.gd" id="3_fyljp"]
+[ext_resource type="Shader" path="res://main/visuals/moon/Sunlight.gdshader" id="4_5a0gu"]
+[ext_resource type="Texture2D" uid="uid://7meuhsg87n2s" path="res://main/visuals/moon/sun_noise.png" id="5_5votc"]
+[ext_resource type="PackedScene" uid="uid://8akykxqykoin" path="res://main/visuals/moon/MoonEndPoint.tscn" id="6_u3yxh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85yqv"]
+shader = ExtResource("1_ymc53")
+shader_parameter/cover_offset = Vector2(-0.205, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rm5d7"]
+shader = ExtResource("4_5a0gu")
+shader_parameter/intensity = 1.0
+shader_parameter/noise = ExtResource("5_5votc")
+
+[node name="ProgressMoon" type="Sprite2D"]
+material = SubResource("ShaderMaterial_85yqv")
+rotation = -0.872665
+scale = Vector2(7, 7)
+texture = ExtResource("2_s343o")
+script = ExtResource("3_fyljp")
+end_point = ExtResource("6_u3yxh")
+
+[node name="Flare" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_rm5d7")
+scale = Vector2(4, 4)
+texture = ExtResource("2_s343o")

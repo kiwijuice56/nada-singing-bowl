@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://cjcngl5ruuv0e"]
+
+[ext_resource type="Shader" uid="uid://dpo0ei1e0wrfh" path="res://main/visuals/session_visual/174_hz.tres" id="1_s5wbk"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_pesc2"]
+[ext_resource type="AudioStream" uid="uid://5y8vfravc6x2" path="res://main/audio/presets/174_hz/174_hz_sustain.ogg" id="3_amp2q"]
+[ext_resource type="AudioStream" uid="uid://cwhas0jw2i8nf" path="res://main/audio/presets/174_hz/174_hz_transition_in.ogg" id="4_xtmw3"]
+[ext_resource type="AudioStream" uid="uid://bm7eemwgq3a6p" path="res://main/audio/presets/174_hz/174_hz_transition_out.ogg" id="5_6tiei"]
+
+[resource]
+script = ExtResource("2_pesc2")
+transition_in = ExtResource("4_xtmw3")
+transition_out = ExtResource("5_6tiei")
+sustain = ExtResource("3_amp2q")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Special Solfeggio"
+description = "For pain relief and relaxation"
+color_1 = Color(0.188235, 0.0156863, 0.137255, 1)
+color_2 = Color(0, 0, 0, 1)
+color_3 = Color(0, 0, 0, 1)
+color_4 = Color(0, 0, 0, 1)
+frequency = 174
+fractal = ExtResource("1_s5wbk")

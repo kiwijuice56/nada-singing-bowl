@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn0iemvaeupr3"]
+
+[ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_51ehr"]
+[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/SettingButton.gd" id="1_71p6k"]
+
+[node name="SettingButton" type="Button" groups=["ClickButton"]]
+custom_minimum_size = Vector2(480, 250)
+focus_mode = 0
+theme = ExtResource("1_51ehr")
+toggle_mode = true
+action_mode = 0
+text = "513 Hz"
+script = ExtResource("1_71p6k")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.5
+offset_top = -64.0
+offset_right = 69.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
+theme_override_font_sizes/font_size = 36
+text = "(513 Hz)"

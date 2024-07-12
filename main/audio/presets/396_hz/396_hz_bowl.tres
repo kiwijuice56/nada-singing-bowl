@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://d0a2erywnv5n"]
+
+[ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="1_ctbk7"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_fqqsy"]
+[ext_resource type="AudioStream" uid="uid://dqa05nd7eporo" path="res://main/audio/presets/396_hz/396_hz_sustain.ogg" id="2_jlejd"]
+[ext_resource type="AudioStream" uid="uid://coj2hxdc01txy" path="res://main/audio/presets/396_hz/396_hz_transition_in.ogg" id="3_b2qp0"]
+[ext_resource type="AudioStream" uid="uid://bgrnbhauisi2" path="res://main/audio/presets/396_hz/396_hz_transition_out.ogg" id="4_xe8o7"]
+
+[resource]
+script = ExtResource("1_fqqsy")
+transition_in = ExtResource("3_b2qp0")
+transition_out = ExtResource("4_xe8o7")
+sustain = ExtResource("2_jlejd")
+in_trim_length = 3.0
+end_trim_length = 15.0
+display_name = "Root Chakra "
+description = "For overcoming guilt, fear, and grief"
+color_1 = Color(0.419608, 0.0470588, 0.0470588, 1)
+color_2 = Color(0.25098, 0.00392157, 0.0588235, 1)
+frequency = 396
+fractal = ExtResource("1_ctbk7")

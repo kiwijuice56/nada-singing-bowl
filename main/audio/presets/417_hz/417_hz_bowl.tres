@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://jibcvd23sb2j"]
+
+[ext_resource type="Shader" uid="uid://d2aa1qamqmmih" path="res://main/visuals/session_visual/417_hz.tres" id="1_kbpm6"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="1_ryyfx"]
+[ext_resource type="AudioStream" uid="uid://b2p7hx81bjsd8" path="res://main/audio/presets/417_hz/417_hz_sustain.ogg" id="3_0di3r"]
+[ext_resource type="AudioStream" uid="uid://ciyu0gr0ly54b" path="res://main/audio/presets/417_hz/417_hz_transition_in.ogg" id="4_fdjmc"]
+[ext_resource type="AudioStream" uid="uid://cdqc5bv7seo3r" path="res://main/audio/presets/417_hz/417_hz_transition_out.ogg" id="5_wytux"]
+
+[resource]
+script = ExtResource("1_ryyfx")
+transition_in = ExtResource("4_fdjmc")
+transition_out = ExtResource("5_wytux")
+sustain = ExtResource("3_0di3r")
+in_trim_length = 3.0
+end_trim_length = 10.0
+display_name = "Sacral Chakra"
+description = "For removing negative energy and negative thoughts"
+color_1 = Color(0.607843, 0.305882, 0.113725, 1)
+color_2 = Color(0.454902, 0.117647, 0.0666667, 1)
+frequency = 417
+fractal = ExtResource("1_kbpm6")
