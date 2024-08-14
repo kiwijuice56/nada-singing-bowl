@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://4u48rwjsutx4"]
+
+[ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_6fd0d"]
+[ext_resource type="Script" path="res://main/user_interface/menu/old_help_menu/HelpMenu.gd" id="2_bjquo"]
+[ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="3_ex4xw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fqx5"]
+
+[node name="HelpMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6fd0d")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1fqx5")
+script = ExtResource("2_bjquo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/shadow_outline_size = 13
+theme_override_constants/line_spacing = -64
+theme_override_font_sizes/font_size = 100
+text = "
+Tutorial
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+text = "Vibrate the virtual singing bowl by moving your thumb in a circular motion along the white ring at the bottom of the screen. The ring will brighten as you move your finger at the correct pace.
+
+During a session, if you wish to let go of your phone, or use mudras, you may press the crystal in the center of the ring to sustain the sounds automatically.
+
+For clearest measurements of your heart and breathing rate, hold your device in your left hand and lightly press your left elbow into your chest. 
+
+Headphones or stereo speakers are strongly recommended.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("3_ex4xw")

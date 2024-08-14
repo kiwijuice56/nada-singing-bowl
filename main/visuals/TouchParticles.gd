@@ -11,3 +11,5 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	if on:
 		emitting = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+	else:
+		emitting = false

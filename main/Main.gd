@@ -24,8 +24,13 @@ func main():
 		%BG.enter()
 		# Wait until the singing bowl is vibrated to begin a session.
 		await %CircleInput.resonance_threshold_reached
+		
 		%BG.exit()
+		%WidgetContainer.enter()
 		await %TitleMenu.exit_session_started()
+		
+		# Start taking samples for accelerometer/gyroscope
+		%PhysiologySensor.start_detection()
 		
 		# Load settings from storage.
 		var settings: UserSettings = %SettingsMenu.get_settings()
@@ -37,14 +42,17 @@ func main():
 		%SingingBowl.configure(settings.bowl_type)
 		
 		# Undergo the actual session loop.
+		%BiofeedbackLayer.start()
 		await %SessionHandler.start_session(settings.session_duration, settings.volume)
+		%BiofeedbackLayer.stop()
+		%PhysiologySensor.stop_detection()
 		
 		# End of session sequence.
 		await %EndLabel.enter()
 		await get_tree().create_timer(5.0).timeout
 		await %CircleInput.resonance_stopped
 		await %EndLabel.exit()
-		
+		%WidgetContainer.exit()
 		# Restart the loop, open the title menu.
 		await %TitleMenu.enter_session_ended()
 

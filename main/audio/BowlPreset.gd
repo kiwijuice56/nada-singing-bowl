@@ -43,4 +43,3 @@ extends Resource
 
 ## See FractalNavigation.gd for what uniforms this shader should have.
 @export var fractal: Shader
-

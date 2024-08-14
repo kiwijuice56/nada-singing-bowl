@@ -1,6 +1,6 @@
 class_name ProgressMoon
 extends Sprite2D
-# Script to controll the moon visual that moves across the screen as a session progresses.
+# Script to control the moon visual that moves across the screen as a session progresses.
 
 @export var end_point: PackedScene
 @export var progress: float = 0.0

@@ -1,11 +1,12 @@
-[gd_scene load_steps=56 format=3 uid="uid://rvy4ai41rle2"]
+[gd_scene load_steps=73 format=3 uid="uid://rvy4ai41rle2"]
 
 [ext_resource type="Script" path="res://main/Main.gd" id="1_p1kf2"]
 [ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="2_0wdta"]
 [ext_resource type="Script" path="res://main/visuals/session_visual/FractalNavigation.gd" id="3_i543k"]
 [ext_resource type="PackedScene" uid="uid://b1xieystjlnaj" path="res://main/visuals/moon/ProgressMoon.tscn" id="4_m06w4"]
+[ext_resource type="Shader" path="res://main/visuals/session_visual/Biofeedback.gdshader" id="4_xv2dd"]
 [ext_resource type="Script" path="res://main/SessionHandler.gd" id="5_cxp3o"]
-[ext_resource type="Texture2D" uid="uid://bxeasg10rmyam" path="res://main/user_interface/icons/back.png" id="6_fd82m"]
+[ext_resource type="Script" path="res://main/visuals/session_visual/BiofeedbackLayer.gd" id="5_xmkj3"]
 [ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="6_y23f2"]
 [ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="7_hvaii"]
 [ext_resource type="Script" path="res://main/visuals/TouchParticles.gd" id="8_2t5au"]
@@ -16,7 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cm05h8tarkp6" path="res://main/user_interface/menu/title_menu/TitleMenu.tscn" id="11_on7mj"]
 [ext_resource type="PackedScene" uid="uid://cgibjwad0y0hn" path="res://main/user_interface/menu/info_menu/InfoMenu.tscn" id="11_or1m0"]
 [ext_resource type="Script" path="res://main/visuals/ambiance/DustParticles.gd" id="11_tt83y"]
-[ext_resource type="PackedScene" uid="uid://4u48rwjsutx4" path="res://main/user_interface/menu/help_menu/HelpMenu.tscn" id="13_2ul3x"]
+[ext_resource type="PackedScene" uid="uid://4u48rwjsutx4" path="res://main/user_interface/menu/old_help_menu/HelpMenu.tscn" id="13_2ul3x"]
+[ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="14_rcvkd"]
 [ext_resource type="Script" path="res://main/user_interface/CircleInput.gd" id="15_v2hrj"]
 [ext_resource type="Script" path="res://main/user_interface/ResetButton.gd" id="16_ci21d"]
 [ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="16_ijllg"]
@@ -30,8 +32,11 @@
 [ext_resource type="Resource" uid="uid://jibcvd23sb2j" path="res://main/audio/presets/417_hz/417_hz_bowl.tres" id="23_1a3s5"]
 [ext_resource type="AudioStream" uid="uid://crvwfc4x3jvdc" path="res://main/audio/sound_effects/menu2.ogg" id="23_b3f5e"]
 [ext_resource type="Resource" uid="uid://ct428xyl1jgu0" path="res://main/audio/presets/528_hz/528_hz_bowl.tres" id="24_edufn"]
+[ext_resource type="Script" path="res://main/user_interface/menu/widget_container/WidgetContainer.gd" id="25_tpfcj"]
 [ext_resource type="Resource" uid="uid://pyebb3avgmog" path="res://main/audio/presets/639_hz/639_hz_bowl.tres" id="25_xujyc"]
+[ext_resource type="PackedScene" uid="uid://sq36xvbyl8gc" path="res://main/user_interface/widget/RateWidget.tscn" id="26_c5c5k"]
 [ext_resource type="Resource" uid="uid://bdqnmg5c2rqul" path="res://main/audio/presets/741_hz/741_hz_bowl.tres" id="26_km7n0"]
+[ext_resource type="Texture2D" uid="uid://c2nwango0vxn6" path="res://main/user_interface/icons/breathing.png" id="27_4q47c"]
 [ext_resource type="Resource" uid="uid://cpcmscuma524t" path="res://main/audio/presets/852_hz/852_hz_bowl.tres" id="27_8u33j"]
 [ext_resource type="Resource" uid="uid://bvy75p143q2bu" path="res://main/audio/presets/432_hz/432_hz_bowl.tres" id="28_ck2w0"]
 [ext_resource type="Resource" uid="uid://cbboosmrw7jvp" path="res://main/audio/presets/963_hz/963_hz_bowl.tres" id="28_wjkqw"]
@@ -40,8 +45,10 @@
 [ext_resource type="Resource" uid="uid://ddmccfnuwlvi3" path="res://main/audio/presets/285_hz/285_hz_bowl.tres" id="30_ysxsf"]
 [ext_resource type="Resource" uid="uid://s5c6f2t8w5b1" path="res://main/audio/presets/11_hz/11_hz_bowl.tres" id="31_pyhfm"]
 [ext_resource type="Resource" uid="uid://ca6sq2a66avry" path="res://main/audio/presets/23_hz/23_hz_bowl.tres" id="32_3mx81"]
+[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="33_5l1yf"]
 [ext_resource type="Resource" uid="uid://d3j4f73bm5k16" path="res://main/audio/presets/40_hz/40_hz_bowl.tres" id="33_32276"]
 [ext_resource type="Resource" uid="uid://cjcngl5ruuv0e" path="res://main/audio/presets/174_hz/174_hz_bowl.tres" id="35_xcbmi"]
+[ext_resource type="Script" path="res://main/PhysiologySensor.gd" id="46_20f0m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqt4h"]
 shader = ExtResource("2_0wdta")
@@ -52,6 +59,50 @@ shader_parameter/color_intensity = 0.57
 shader_parameter/scale = 0.25
 shader_parameter/border = 0.15
 shader_parameter/audio1 = 0.345
+
+[sub_resource type="Gradient" id="Gradient_rdndh"]
+offsets = PackedFloat32Array(0, 0.232323, 0.537879, 0.805556, 1)
+colors = PackedColorArray(1, 1, 1, 0.245283, 1, 1, 1, 0.245283, 1, 1, 1, 0.245283, 1, 1, 1, 0.245283, 1, 1, 1, 0.245283)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vxxd5"]
+gradient = SubResource("Gradient_rdndh")
+
+[sub_resource type="Gradient" id="Gradient_68m16"]
+offsets = PackedFloat32Array(0, 0.475177)
+colors = PackedColorArray(1, 1, 1, 0.882353, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fy52w"]
+gradient = SubResource("Gradient_68m16")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4613y"]
+shader = ExtResource("4_xv2dd")
+shader_parameter/uv_offset = Vector2(0, 0.135)
+shader_parameter/scale = 12.0
+shader_parameter/aspect_ratio = 0.77
+shader_parameter/spiral_width = 0.5
+shader_parameter/color_intensity = 1.0
+shader_parameter/color_gradient = SubResource("GradientTexture1D_vxxd5")
+shader_parameter/distance_gradient = SubResource("GradientTexture1D_fy52w")
+
+[sub_resource type="Gradient" id="Gradient_r7s18"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.490446, 1)
+colors = PackedColorArray(0.82, 0.39688, 0.1148, 1, 1, 1, 1, 1, 0.2552, 0.328093, 0.88, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rd73f"]
+gradient = SubResource("Gradient_r7s18")
+width = 512
+
+[sub_resource type="Gradient" id="Gradient_q53dh"]
+colors = PackedColorArray(0, 0, 0, 0.909804, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hevvl"]
+gradient = SubResource("Gradient_q53dh")
+fill_from = Vector2(0.505119, 1)
+fill_to = Vector2(0.505119, 0.709898)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmjp8"]
+texture = SubResource("GradientTexture2D_hevvl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ibdfr"]
 shader = ExtResource("17_ic44v")
@@ -108,12 +159,12 @@ shader_parameter/half_color = false
 shader_parameter/use_gradient = false
 
 [sub_resource type="Curve" id="Curve_pwmmv"]
-_data = [Vector2(0, 0.231706), 0.0, 0.539092, 0, 0, Vector2(0.996411, 1), 2.09565, 0.0, 0, 0]
+_data = [Vector2(0, 0.229669), 0.0, 0.377295, 0, 0, Vector2(1, 0.463425), 0.661717, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_smgsn"]
-offsets = PackedFloat32Array(0, 0.180282, 0.386667, 0.583333, 1)
-colors = PackedColorArray(1, 0.61, 1, 0, 1, 1, 0.631373, 0.54902, 0.729412, 1, 1, 0.54902, 1, 1, 1, 0.352941, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.0123839, 0.185759, 0.417957, 0.74613, 1)
+colors = PackedColorArray(1, 0.61, 1, 0, 1, 1, 0.631373, 0.839216, 0.729412, 1, 1, 0.713726, 1, 1, 1, 0.584314, 1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_16q8p"]
 shader = ExtResource("6_y23f2")
@@ -126,26 +177,42 @@ shader_parameter/half_color = false
 shader_parameter/use_gradient = true
 
 [sub_resource type="Gradient" id="Gradient_efaqp"]
-offsets = PackedFloat32Array(0, 0.15, 0.526807)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.592157, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.171548, 0.526807)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.72549, 1, 1, 1, 0)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_p1kf2")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="FractalLayer" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="FractalLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FractalNavigation" type="ColorRect" parent="CanvasLayer/MarginContainer"]
+[node name="FractalNavigation" type="ColorRect" parent="FractalLayer/MarginContainer"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_yqt4h")
 layout_mode = 2
 script = ExtResource("3_i543k")
+
+[node name="BiofeedbackLayer" type="ColorRect" parent="FractalLayer/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.827451)
+material = SubResource("ShaderMaterial_4613y")
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_xmkj3")
+offset_count = 5
+max_heart_rate_delta = 15.0
+max_breathing_rate_delta = 4.0
+relaxation_gradient = SubResource("GradientTexture1D_rd73f")
+
+[node name="BottomGradient" type="PanelContainer" parent="FractalLayer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vmjp8")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -236,10 +303,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("16_ijllg")
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 96
 script = ExtResource("9_0a51r")
 
 [node name="ResetButton" type="Button" parent="UI/BackMenu"]
@@ -247,7 +314,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-icon = ExtResource("6_fd82m")
+icon = ExtResource("14_rcvkd")
 script = ExtResource("16_ci21d")
 
 [node name="TitleMenu" parent="UI" instance=ExtResource("11_on7mj")]
@@ -268,7 +335,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_bottom = 86
 
 [node name="CircleInput" type="ColorRect" parent="UI/CircleContainer"]
 unique_name_in_owner = true
@@ -311,7 +378,7 @@ self_modulate = Color(1, 1, 1, 0.462745)
 material = SubResource("ShaderMaterial_16q8p")
 position = Vector2(514, 515)
 emitting = false
-lifetime = 2.2
+lifetime = 2.4
 speed_scale = 0.4
 texture = ExtResource("7_hvaii")
 gravity = Vector2(0, 0)
@@ -379,6 +446,41 @@ horizontal_alignment = 1
 script = ExtResource("17_lyd3c")
 transition_time = 0.3
 
+[node name="WidgetContainer" type="MarginContainer" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+script = ExtResource("25_tpfcj")
+
+[node name="HeartRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("sensor") instance=ExtResource("26_c5c5k")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+stretch_mode = 2
+sensor = NodePath("../../../PhysiologySensor")
+rate_type = "heart"
+initial_period = 30.0
+
+[node name="BreathingRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("sensor") instance=ExtResource("26_c5c5k")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("27_4q47c")
+stretch_mode = 2
+sensor = NodePath("../../../PhysiologySensor")
+rate_type = "breath"
+initial_period = 30.0
+
 [node name="PhotosensitiveWarning" type="ColorRect" parent="UI"]
 unique_name_in_owner = true
 visible = false
@@ -416,7 +518,7 @@ script = ExtResource("5_cxp3o")
 [node name="SingingBowl" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("17_jom3w")
-preset_mappings = Array[Resource("res://main/audio/BowlPreset.gd")]([ExtResource("28_wjkqw"), ExtResource("27_8u33j"), ExtResource("26_km7n0"), ExtResource("25_xujyc"), ExtResource("24_edufn"), ExtResource("28_ck2w0"), ExtResource("23_1a3s5"), ExtResource("22_l8mmf"), ExtResource("30_ysxsf"), ExtResource("35_xcbmi"), ExtResource("33_32276"), ExtResource("32_3mx81"), ExtResource("31_pyhfm"), ExtResource("30_lgqak"), ExtResource("29_aphwp")])
+preset_mappings = Array[ExtResource("33_5l1yf")]([ExtResource("28_wjkqw"), ExtResource("27_8u33j"), ExtResource("26_km7n0"), ExtResource("25_xujyc"), ExtResource("24_edufn"), ExtResource("28_ck2w0"), ExtResource("23_1a3s5"), ExtResource("22_l8mmf"), ExtResource("30_ysxsf"), ExtResource("35_xcbmi"), ExtResource("33_32276"), ExtResource("32_3mx81"), ExtResource("31_pyhfm"), ExtResource("30_lgqak"), ExtResource("29_aphwp")])
 transition = 1.0
 resonance_transition = 4.0
 
@@ -429,3 +531,8 @@ unique_name_in_owner = true
 
 [node name="TransitionOut" type="AudioStreamPlayer" parent="SingingBowl"]
 unique_name_in_owner = true
+
+[node name="PhysiologySensor" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("46_20f0m")
+sample_size = 1024

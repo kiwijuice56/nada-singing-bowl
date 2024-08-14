@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Nāda: Singing Bowl Meditation"
-config/version="11"
+config/version="13"
 run/main_scene="res://main/Main.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://promotional/app_icon.png"
@@ -21,6 +21,8 @@ config/icon="res://promotional/app_icon.png"
 [audio]
 
 buses/default_bus_layout="res://main/audio/default_bus_layout.tres"
+buses/channel_disable_threshold_db=-1000.0
+buses/channel_disable_time=1e+07
 
 [debug]
 
@@ -30,7 +32,7 @@ gdscript/warnings/integer_division=0
 [display]
 
 window/size/viewport_width=1440
-window/size/viewport_height=2560
+window/size/viewport_height=2760
 window/size/window_width_override=675
 window/size/window_height_override=1200
 window/stretch/mode="canvas_items"

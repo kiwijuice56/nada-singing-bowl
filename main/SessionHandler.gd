@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	var resonance: float = %CircleInput.resonance
 	
 	var time_scale: float
-	var intensity: float = normal_dist(0)
+	var intensity: float = SessionHandler.normal_dist(0)
 	
 	if in_session:
 		if resonance < 0.08 and not %BackMenu.visible:
@@ -65,6 +65,7 @@ func _process(delta: float) -> void:
 	else:
 		if %BackMenu.visible:
 			%BackMenu.exit()
+		%TouchParticles.on = false
 		
 		%SingingBowl.update(0.0, 0.0, -1.0, delta, 0.0)
 	# Advance fractal animation.

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://be6hip15thutp"]
+
+[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="1_dhbvf"]
+[ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="2_37wnb"]
+[ext_resource type="Script" path="res://main/user_interface/widget/rate_ring/RateRing.gd" id="3_vs022"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pnj7n"]
+shader = ExtResource("1_dhbvf")
+shader_parameter/inner_radius = 0.49
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = true
+
+[node name="RateRing" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.576471)
+material = SubResource("ShaderMaterial_pnj7n")
+scale = Vector2(16, 16)
+texture = ExtResource("2_37wnb")
+script = ExtResource("3_vs022")
+decay_time = 24.0
+maximum_scale = 24.0

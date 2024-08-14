@@ -24,7 +24,9 @@ extends ColorRect
 var color_intensity: float = 0.0:
 	set(val):
 		color_intensity = val
-		material.set_shader_parameter("color_intensity", min(resonance * resonance, sqrt(color_intensity)) * 0.85)
+		var shader_val: float = min(resonance * resonance, sqrt(color_intensity)) * 0.85
+		material.set_shader_parameter("color_intensity", shader_val)
+		%BiofeedbackLayer.material.set_shader_parameter("color_intensity", shader_val)
 
 # Set by SessionHandler.
 var resonance: float = 0.0
@@ -33,7 +35,10 @@ var resonance: float = 0.0
 var spatial_progress: float = 0.0:
 	set(val):
 		spatial_progress = val
-		material.set_shader_parameter("scale", 8.0 - spatial_progress * 8.0 + 0.25)
+		var shader_val: float = 8.0 - spatial_progress * 8.0 + 0.25
+		material.set_shader_parameter("scale", shader_val)
+		%BiofeedbackLayer.material.set_shader_parameter("scale", shader_val)
+		
 var real_time: float = 0
 
 var spectrum: AudioEffectSpectrumAnalyzerInstance
@@ -48,6 +53,7 @@ func _ready() -> void:
 
 func _on_resized() -> void:
 	material.set_shader_parameter("aspect_ratio", size.x / size.y)
+	%BiofeedbackLayer.material.set_shader_parameter("aspect_ratio", size.x / size.y)
 
 func advance_cycle(amount: float) -> void:
 	# Update the sound-responsive parameter.

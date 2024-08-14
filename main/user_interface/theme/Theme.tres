@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c3nu6i7da3wrw"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://c3nu6i7da3wrw"]
 
 [ext_resource type="FontFile" uid="uid://h7yr3buncrhq" path="res://main/user_interface/font/Poppins-Regular.ttf" id="1_d7723"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvxkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oillf"]
 content_margin_left = 8.0
@@ -8,21 +10,29 @@ content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
 bg_color = Color(0.321569, 0.301961, 0.380392, 0.784314)
+border_width_bottom = 11
+border_color = Color(0.16555, 0.1474, 0.22, 0.784314)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_bottom = 8.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm38q"]
 content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.172549, 0.156863, 0.219608, 0.764706)
+bg_color = Color(0.226925, 0.2059, 0.29, 0.764706)
+border_width_bottom = 11
+border_color = Color(0.0532334, 0.039, 0.1, 0.894118)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+expand_margin_bottom = 8.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hobsx"]
 content_margin_left = 8.0
@@ -30,15 +40,16 @@ content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
 bg_color = Color(0.101961, 0.0941176, 0.121569, 0.784314)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(1, 1, 1, 0.129412)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 0.239216)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+anti_aliasing = false
 
 [sub_resource type="Gradient" id="Gradient_yuakr"]
 offsets = PackedFloat32Array(0.0171429, 0.990769)
@@ -55,33 +66,51 @@ content_margin_top = 24.0
 content_margin_bottom = 24.0
 bg_color = Color(0.172549, 0.156863, 0.219608, 0.764706)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxbk0"]
-texture = SubResource("GradientTexture2D_om21y")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4ndf"]
+bg_color = Color(1, 1, 1, 0.603922)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4p3s"]
-content_margin_top = 24.0
-content_margin_bottom = 24.0
-bg_color = Color(0, 0, 0, 0.372549)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e155b"]
+bg_color = Color(1, 1, 1, 0.737255)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
-[sub_resource type="Gradient" id="Gradient_ga5o1"]
-offsets = PackedFloat32Array(0.0171429, 0.990769)
-colors = PackedColorArray(0.45098, 0.45098, 0.45098, 0.231373, 1, 1, 1, 0.309804)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jikpn"]
-gradient = SubResource("Gradient_ga5o1")
-fill_from = Vector2(1, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3k7q5"]
-texture = SubResource("GradientTexture2D_jikpn")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5fj2"]
-content_margin_left = 24.0
-content_margin_right = 24.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3nt4"]
+content_margin_top = 22.0
+content_margin_bottom = 22.0
 bg_color = Color(0.172549, 0.156863, 0.219608, 0.619608)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1u38"]
+bg_color = Color(1, 1, 1, 0.603922)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ctfi"]
+bg_color = Color(1, 1, 1, 0.737255)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxvsa"]
+content_margin_left = 22.0
+content_margin_right = 22.0
+bg_color = Color(0.172549, 0.156863, 0.219608, 0.619608)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="FontVariation" id="FontVariation_nllcr"]
 base_font = ExtResource("1_d7723")
@@ -90,6 +119,7 @@ base_font = ExtResource("1_d7723")
 default_base_scale = 16.0
 default_font = SubResource("FontVariation_nllcr")
 default_font_size = 64
+Button/styles/focus = SubResource("StyleBoxEmpty_cvxkp")
 Button/styles/hover = SubResource("StyleBoxFlat_oillf")
 Button/styles/normal = SubResource("StyleBoxFlat_qm38q")
 Button/styles/pressed = SubResource("StyleBoxFlat_hobsx")
@@ -97,10 +127,10 @@ HScrollBar/styles/grabber = SubResource("StyleBoxTexture_ta7fw")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ta7fw")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ta7fw")
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_cm1yt")
-HSlider/styles/grabber_area = SubResource("StyleBoxTexture_kxbk0")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_kxbk0")
-HSlider/styles/slider = SubResource("StyleBoxFlat_l4p3s")
-VScrollBar/styles/grabber = SubResource("StyleBoxTexture_3k7q5")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_3k7q5")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_3k7q5")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_y5fj2")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_b4ndf")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_e155b")
+HSlider/styles/slider = SubResource("StyleBoxFlat_k3nt4")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_k1u38")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_5ctfi")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_5ctfi")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_vxvsa")

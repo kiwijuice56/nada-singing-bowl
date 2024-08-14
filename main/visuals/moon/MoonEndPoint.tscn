@@ -5,11 +5,17 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dbyst"]
 shader = ExtResource("1_ifyux")
-shader_parameter/inner_radius = 0.47
+shader_parameter/inner_radius = 0.45
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 1)
+shader_parameter/color_top1 = Color(1, 1, 1, 1)
+shader_parameter/color_bottom1 = Color(1, 1, 1, 1)
+shader_parameter/half_color = false
+shader_parameter/use_gradient = true
 
 [node name="MoonEndPoint" type="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0.262745)
+self_modulate = Color(1, 1, 1, 0.333333)
 material = SubResource("ShaderMaterial_dbyst")
 scale = Vector2(7, 7)
 texture = ExtResource("2_cg88r")

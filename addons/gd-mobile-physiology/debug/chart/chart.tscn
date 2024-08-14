@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsjbwo2ih2fke"]
+
+[ext_resource type="Script" path="res://addons/gd-mobile-physiology/debug/chart/Chart.gd" id="1_0lcky"]
+
+[node name="Chart" type="PanelContainer"]
+offset_right = 117.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+script = ExtResource("1_0lcky")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Max" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="Min" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 20
+text = "0"

@@ -18,22 +18,26 @@ script = ExtResource("2_c8cnj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 64
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 13
 theme_override_constants/line_spacing = -64
 theme_override_font_sizes/font_size = 100
 text = "
-About
-
+Help
 "
 horizontal_alignment = 1
 
@@ -54,14 +58,72 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 32
 
+[node name="Title4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 76
+text = "Tutorial"
+horizontal_alignment = 1
+
+[node name="Description4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+theme_override_constants/line_spacing = 24
+text = "Vibrate the virtual singing bowl by moving your thumb in a circular motion along the white ring at the bottom of the screen. The ring will brighten as you move your finger at the correct pace.
+
+During a session, if you wish to let go of your phone, or use mudras, you may press the crystal in the center of the ring to sustain the sounds automatically.
+
+For clearest measurements of your heart and breathing rate, hold your device in your left hand and lightly press your left elbow into your chest. 
+
+Headphones or stereo speakers are strongly recommended.
+
+"
+autowrap_mode = 2
+
+[node name="Title3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 76
+text = "Data Safety"
+horizontal_alignment = 1
+
+[node name="Description3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+theme_override_constants/line_spacing = 24
+text = "No information is collected by this app. The heart and respiration rate detection are calculated locally on your device using the built-in gyroscope and accelerometer.
+
+"
+autowrap_mode = 2
+
 [node name="Title1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
 theme_override_font_sizes/font_size = 76
 text = "Design"
 horizontal_alignment = 1
 
 [node name="Description1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
 theme_override_constants/line_spacing = 24
 text = "This mobile app was created by Eric Alfaro, under the guidance of Dr. Richard Ribon Fletcher, with the support of the MIT Undergraduate Research Opportunities Program. This project explores the use of sound and visualizations as tools for meditation and psychotherapy.
 
@@ -72,12 +134,20 @@ autowrap_mode = 2
 
 [node name="Title2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
 theme_override_font_sizes/font_size = 76
 text = "Sound Therapy"
 horizontal_alignment = 1
 
 [node name="Description2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
 theme_override_constants/line_spacing = 24
 text = "The set of Solfeggio frequencies commonly used for sound therapy have origins in Western music dating back to 8th Century Gregorian chants. The choice of the specific frequency values were influenced in part by numerology and popularized by Joseph Puleo in the 1970s.
 

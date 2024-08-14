@@ -31,11 +31,11 @@ func _on_exit_pressed() -> void:
 
 func enter() -> void:
 	load_settings(settings_resource)
-	super.enter()
+	await super.enter()
 
 func exit() -> void:
 	save_settings()
-	super.exit()
+	await super.exit()
 
 func get_settings() -> UserSettings:
 	return settings_resource
@@ -43,7 +43,7 @@ func get_settings() -> UserSettings:
 # Place stored values into UI components.
 func load_settings(settings: UserSettings):
 	%DurationSlider.value = settings.session_duration
-	_on_duration_changed(settings.session_duration)
+	_on_duration_changed(int(settings.session_duration))
 	%VolumeSlider.value = settings.volume
 	%BowlSelector.index = settings.bowl_type
 
