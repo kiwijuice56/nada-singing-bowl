@@ -28,7 +28,13 @@ func _rates_updated(heart_rate: float, breathing_rate: float) -> void:
 	if not animating:
 		return
 	
+	var valid_reading: bool = heart_rate > 0 and breathing_rate > 0
+	
 	if initial_sample:
+		# Don't start any animation if we haven't received a good reading.
+		if not valid_reading:
+			return
+		
 		initial_heart_rate = heart_rate
 		initial_breathing_rate = breathing_rate
 		initial_sample = false
@@ -38,7 +44,11 @@ func _rates_updated(heart_rate: float, breathing_rate: float) -> void:
 	if is_instance_valid(tween) and tween.is_running():
 		tween.kill()
 	
-	relaxation_scores.insert(0, relaxation_heuristic(heart_rate, breathing_rate))
+	if heart_rate > 0 and breathing_rate > 0:
+		relaxation_scores.insert(0, relaxation_heuristic(heart_rate, breathing_rate))
+	else: # The sensor has determined that this reading was too noisy.
+		relaxation_scores.insert(0, -1)
+	
 	if len(relaxation_scores) >= offset_count:
 		relaxation_scores.pop_back()
 	
@@ -70,7 +80,10 @@ func reset_points() -> void:
 		if i >= len(relaxation_scores):
 			output.set_color(i, Color(1, 1, 1, 0))
 		else:
-			output.set_color(i, relaxation_gradient.gradient.sample(relaxation_scores[i]))
+			if relaxation_scores[i] < 0 :
+				output.set_color(i, Color(1, 1, 1, 0))
+			else:
+				output.set_color(i, relaxation_gradient.gradient.sample(relaxation_scores[i]))
 		if i == 0:
 			output.set_offset(i, 0)
 		else:

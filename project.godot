@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Nāda: Singing Bowl Meditation"
-config/version="13"
+config/version="15"
 run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)

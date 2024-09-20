@@ -7,5 +7,5 @@ script = ExtResource("1_qjnfb")
 version = ""
 volume = 0.0
 session_duration = 120.0
-bowl_type = 14
+bowl_type = 8
 first_opened_app = true

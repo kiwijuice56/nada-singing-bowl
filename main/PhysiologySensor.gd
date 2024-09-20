@@ -6,6 +6,9 @@ extends Node
 
 @export var sample_size: int 
 
+@export var magnitude_cutoff_breathing: float = 15.0
+@export var magnitude_cutoff_heart: float = 100.0
+
 # The heart/breath arrays hold much of the same values, but usually have slightly different
 # sample sizes; We could store this data in two arrays and then slice them before analyzing,
 # but performance is more important than memory.
@@ -46,11 +49,18 @@ func _physics_process(_delta: float) -> void:
 		reset()
 
 func calculate_rates() -> void:
-	var heart_rate_bpm: float = HeartRateAlgorithm.Analyze(accelerometer_heart, gyroscope_heart, false, {}, true)
-	var breath_rate_bpm: float = BreathingRateAlgorithm.Analyze(accelerometer_breath, gyroscope_breath, false, {}, true)
-	rates_updated.emit(heart_rate_bpm, breath_rate_bpm)
+	var heart_info: Dictionary = HeartRateAlgorithm.Analyze(accelerometer_heart, gyroscope_heart, false, {}, true)
+	var breath_info: Dictionary = BreathingRateAlgorithm.Analyze(accelerometer_breath, gyroscope_breath, false, {}, true)
 	
-	print(heart_rate_bpm, " ", breath_rate_bpm)
+	var heart_rate: float = heart_info["rate"]
+	var breath_rate: float = breath_info["rate"]
+	
+	if not is_valid_reading(heart_info["magnitude"], magnitude_cutoff_heart) or not is_valid_reading(breath_info["magnitude"], magnitude_cutoff_breathing):
+		rates_updated.emit(-1, -1)
+	else:
+		rates_updated.emit(heart_rate, breath_rate)
+	
+	print(heart_info, " ", breath_info)
 
 func start_detection() -> void:
 	reset()
@@ -70,3 +80,6 @@ func reset() -> void:
 	gyroscope_heart = []
 	accelerometer_breath = []
 	gyroscope_breath = []
+
+func is_valid_reading(rate_magnitude: float, cutoff: float) -> bool:
+	return not is_nan(rate_magnitude) and not rate_magnitude < cutoff

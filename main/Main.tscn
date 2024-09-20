@@ -200,7 +200,6 @@ script = ExtResource("3_i543k")
 
 [node name="BiofeedbackLayer" type="ColorRect" parent="FractalLayer/MarginContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.827451)
 material = SubResource("ShaderMaterial_4613y")
 layout_mode = 2
 mouse_filter = 2
@@ -448,6 +447,7 @@ transition_time = 0.3
 
 [node name="WidgetContainer" type="MarginContainer" parent="UI"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -460,26 +460,46 @@ theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 script = ExtResource("25_tpfcj")
 
-[node name="HeartRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("sensor") instance=ExtResource("26_c5c5k")]
+[node name="HeartRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("bpm_label", "sensor") instance=ExtResource("26_c5c5k")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 stretch_mode = 2
+bpm_label = NodePath("../HeartRateBPM")
 sensor = NodePath("../../../PhysiologySensor")
 rate_type = "heart"
-initial_period = 30.0
 
-[node name="BreathingRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("sensor") instance=ExtResource("26_c5c5k")]
+[node name="BreathingRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("bpm_label", "sensor") instance=ExtResource("26_c5c5k")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 texture = ExtResource("27_4q47c")
 stretch_mode = 2
+bpm_label = NodePath("../BreathRateBPM")
 sensor = NodePath("../../../PhysiologySensor")
 rate_type = "breath"
-initial_period = 30.0
+
+[node name="HeartRateBPM" type="Label" parent="UI/WidgetContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 1
+
+[node name="BreathRateBPM" type="Label" parent="UI/WidgetContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 1
 
 [node name="PhotosensitiveWarning" type="ColorRect" parent="UI"]
 unique_name_in_owner = true
