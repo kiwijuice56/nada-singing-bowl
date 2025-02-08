@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1xieystjlnaj"]
 
-[ext_resource type="Shader" path="res://main/visuals/moon/Eclipse.gdshader" id="1_ymc53"]
+[ext_resource type="Shader" uid="uid://6ws7peokxmso" path="res://main/visuals/moon/Eclipse.gdshader" id="1_ymc53"]
 [ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="2_s343o"]
-[ext_resource type="Script" path="res://main/visuals/moon/ProgressMoon.gd" id="3_fyljp"]
-[ext_resource type="Shader" path="res://main/visuals/moon/Sunlight.gdshader" id="4_5a0gu"]
+[ext_resource type="Script" uid="uid://5bbclirfsrpg" path="res://main/visuals/moon/ProgressMoon.gd" id="3_fyljp"]
+[ext_resource type="Shader" uid="uid://bsjfdeyx0ouqy" path="res://main/visuals/moon/Sunlight.gdshader" id="4_5a0gu"]
 [ext_resource type="Texture2D" uid="uid://7meuhsg87n2s" path="res://main/visuals/moon/sun_noise.png" id="5_5votc"]
 [ext_resource type="PackedScene" uid="uid://8akykxqykoin" path="res://main/visuals/moon/MoonEndPoint.tscn" id="6_u3yxh"]
 

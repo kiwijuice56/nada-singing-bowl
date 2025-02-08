@@ -1,38 +1,37 @@
-[gd_scene load_steps=73 format=3 uid="uid://rvy4ai41rle2"]
+[gd_scene load_steps=72 format=3 uid="uid://rvy4ai41rle2"]
 
-[ext_resource type="Script" path="res://main/Main.gd" id="1_p1kf2"]
+[ext_resource type="Script" uid="uid://b286iib7yuiet" path="res://main/Main.gd" id="1_p1kf2"]
 [ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="2_0wdta"]
-[ext_resource type="Script" path="res://main/visuals/session_visual/FractalNavigation.gd" id="3_i543k"]
+[ext_resource type="Script" uid="uid://ejikipbnb6u5" path="res://main/visuals/session_visual/FractalNavigation.gd" id="3_i543k"]
 [ext_resource type="PackedScene" uid="uid://b1xieystjlnaj" path="res://main/visuals/moon/ProgressMoon.tscn" id="4_m06w4"]
-[ext_resource type="Shader" path="res://main/visuals/session_visual/Biofeedback.gdshader" id="4_xv2dd"]
-[ext_resource type="Script" path="res://main/SessionHandler.gd" id="5_cxp3o"]
-[ext_resource type="Script" path="res://main/visuals/session_visual/BiofeedbackLayer.gd" id="5_xmkj3"]
-[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="6_y23f2"]
+[ext_resource type="Shader" uid="uid://nlh88ryxbnk5" path="res://main/visuals/session_visual/Biofeedback.gdshader" id="4_xv2dd"]
+[ext_resource type="Script" uid="uid://d4bi37lmc1kvx" path="res://main/SessionHandler.gd" id="5_cxp3o"]
+[ext_resource type="Script" uid="uid://dxyos0gvxomk1" path="res://main/visuals/session_visual/BiofeedbackLayer.gd" id="5_xmkj3"]
+[ext_resource type="Shader" uid="uid://btlmcehimppfr" path="res://main/visuals/Ring.gdshader" id="6_y23f2"]
 [ext_resource type="Texture2D" uid="uid://b7o71a2qv3b3q" path="res://main/visuals/white_square.png" id="7_hvaii"]
-[ext_resource type="Script" path="res://main/visuals/TouchParticles.gd" id="8_2t5au"]
-[ext_resource type="Script" path="res://main/user_interface/menu/Menu.gd" id="9_0a51r"]
+[ext_resource type="Script" uid="uid://cy8u1w5p6tidn" path="res://main/visuals/TouchParticles.gd" id="8_2t5au"]
+[ext_resource type="Script" uid="uid://dwc53w2huoy5t" path="res://main/user_interface/menu/Menu.gd" id="9_0a51r"]
 [ext_resource type="PackedScene" uid="uid://cyt47kwsgktw2" path="res://main/user_interface/menu/settings_menu/SettingsMenu.tscn" id="10_d62rg"]
 [ext_resource type="Texture2D" uid="uid://bg50rbh2q3m0i" path="res://main/user_interface/icons/circle_large.png" id="10_dri80"]
-[ext_resource type="Script" path="res://main/user_interface/Ambiance.gd" id="10_pgmon"]
+[ext_resource type="Script" uid="uid://ctprflxv5tpq0" path="res://main/user_interface/Ambiance.gd" id="10_pgmon"]
 [ext_resource type="PackedScene" uid="uid://cm05h8tarkp6" path="res://main/user_interface/menu/title_menu/TitleMenu.tscn" id="11_on7mj"]
 [ext_resource type="PackedScene" uid="uid://cgibjwad0y0hn" path="res://main/user_interface/menu/info_menu/InfoMenu.tscn" id="11_or1m0"]
-[ext_resource type="Script" path="res://main/visuals/ambiance/DustParticles.gd" id="11_tt83y"]
-[ext_resource type="PackedScene" uid="uid://4u48rwjsutx4" path="res://main/user_interface/menu/old_help_menu/HelpMenu.tscn" id="13_2ul3x"]
+[ext_resource type="Script" uid="uid://m2f7d40jfou2" path="res://main/visuals/ambiance/DustParticles.gd" id="11_tt83y"]
 [ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="14_rcvkd"]
-[ext_resource type="Script" path="res://main/user_interface/CircleInput.gd" id="15_v2hrj"]
-[ext_resource type="Script" path="res://main/user_interface/ResetButton.gd" id="16_ci21d"]
+[ext_resource type="Script" uid="uid://5xb8kksnolw7" path="res://main/user_interface/CircleInput.gd" id="15_v2hrj"]
+[ext_resource type="Script" uid="uid://cugal3ivcur4q" path="res://main/user_interface/ResetButton.gd" id="16_ci21d"]
 [ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="16_ijllg"]
-[ext_resource type="Shader" path="res://main/visuals/ambiance/Rays.gdshader" id="17_ic44v"]
-[ext_resource type="Script" path="res://main/audio/SingingBowl.gd" id="17_jom3w"]
-[ext_resource type="Script" path="res://main/user_interface/EndLabel.gd" id="17_lyd3c"]
-[ext_resource type="Script" path="res://main/user_interface/PhotosensitiveWarning.gd" id="20_857ea"]
-[ext_resource type="Texture2D" uid="uid://dsbrjcdp2bp8x" path="res://main/user_interface/icons/cysrtal.png" id="21_p7q3d"]
+[ext_resource type="Shader" uid="uid://whlav6d013y7" path="res://main/visuals/ambiance/Rays.gdshader" id="17_ic44v"]
+[ext_resource type="Script" uid="uid://b2g4yb1tbt61i" path="res://main/audio/SingingBowl.gd" id="17_jom3w"]
+[ext_resource type="Script" uid="uid://bmoa7os1uq6h5" path="res://main/user_interface/EndLabel.gd" id="17_lyd3c"]
+[ext_resource type="Script" uid="uid://crb2f7710hxjv" path="res://main/user_interface/PhotosensitiveWarning.gd" id="20_857ea"]
+[ext_resource type="Texture2D" uid="uid://dsbrjcdp2bp8x" path="res://main/user_interface/icons/crystal.png" id="21_p7q3d"]
 [ext_resource type="Resource" uid="uid://d0a2erywnv5n" path="res://main/audio/presets/396_hz/396_hz_bowl.tres" id="22_l8mmf"]
 [ext_resource type="AudioStream" uid="uid://dn3lvd0d33sek" path="res://main/audio/sound_effects/menu1.ogg" id="22_tc6y4"]
 [ext_resource type="Resource" uid="uid://jibcvd23sb2j" path="res://main/audio/presets/417_hz/417_hz_bowl.tres" id="23_1a3s5"]
 [ext_resource type="AudioStream" uid="uid://crvwfc4x3jvdc" path="res://main/audio/sound_effects/menu2.ogg" id="23_b3f5e"]
 [ext_resource type="Resource" uid="uid://ct428xyl1jgu0" path="res://main/audio/presets/528_hz/528_hz_bowl.tres" id="24_edufn"]
-[ext_resource type="Script" path="res://main/user_interface/menu/widget_container/WidgetContainer.gd" id="25_tpfcj"]
+[ext_resource type="Script" uid="uid://droqhym8j2x55" path="res://main/user_interface/menu/widget_container/WidgetContainer.gd" id="25_tpfcj"]
 [ext_resource type="Resource" uid="uid://pyebb3avgmog" path="res://main/audio/presets/639_hz/639_hz_bowl.tres" id="25_xujyc"]
 [ext_resource type="PackedScene" uid="uid://sq36xvbyl8gc" path="res://main/user_interface/widget/RateWidget.tscn" id="26_c5c5k"]
 [ext_resource type="Resource" uid="uid://bdqnmg5c2rqul" path="res://main/audio/presets/741_hz/741_hz_bowl.tres" id="26_km7n0"]
@@ -45,10 +44,10 @@
 [ext_resource type="Resource" uid="uid://ddmccfnuwlvi3" path="res://main/audio/presets/285_hz/285_hz_bowl.tres" id="30_ysxsf"]
 [ext_resource type="Resource" uid="uid://s5c6f2t8w5b1" path="res://main/audio/presets/11_hz/11_hz_bowl.tres" id="31_pyhfm"]
 [ext_resource type="Resource" uid="uid://ca6sq2a66avry" path="res://main/audio/presets/23_hz/23_hz_bowl.tres" id="32_3mx81"]
-[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="33_5l1yf"]
+[ext_resource type="Script" uid="uid://degvokjofbxrr" path="res://main/audio/BowlPreset.gd" id="33_5l1yf"]
 [ext_resource type="Resource" uid="uid://d3j4f73bm5k16" path="res://main/audio/presets/40_hz/40_hz_bowl.tres" id="33_32276"]
 [ext_resource type="Resource" uid="uid://cjcngl5ruuv0e" path="res://main/audio/presets/174_hz/174_hz_bowl.tres" id="35_xcbmi"]
-[ext_resource type="Script" path="res://main/PhysiologySensor.gd" id="46_20f0m"]
+[ext_resource type="Script" uid="uid://brxrk1ew5dj2d" path="res://main/PhysiologySensor.gd" id="46_20f0m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqt4h"]
 shader = ExtResource("2_0wdta")
@@ -79,10 +78,10 @@ shader = ExtResource("4_xv2dd")
 shader_parameter/uv_offset = Vector2(0, 0.135)
 shader_parameter/scale = 12.0
 shader_parameter/aspect_ratio = 0.77
-shader_parameter/spiral_width = 0.5
-shader_parameter/color_intensity = 1.0
 shader_parameter/color_gradient = SubResource("GradientTexture1D_vxxd5")
 shader_parameter/distance_gradient = SubResource("GradientTexture1D_fy52w")
+shader_parameter/spiral_width = 0.5
+shader_parameter/color_intensity = 1.0
 
 [sub_resource type="Gradient" id="Gradient_r7s18"]
 interpolation_color_space = 2
@@ -246,9 +245,9 @@ transition_time = 1.2
 self_modulate = Color(1, 1, 1, 0.176471)
 position = Vector2(720, 1280)
 amount = 86
+texture = ExtResource("10_dri80")
 lifetime = 4.0
 speed_scale = 0.2
-texture = ExtResource("10_dri80")
 emission_shape = 3
 emission_rect_extents = Vector2(720, 1280)
 gravity = Vector2(0, 250)
@@ -285,11 +284,6 @@ visible = false
 layout_mode = 2
 
 [node name="InfoMenu" parent="UI/BackgroundPanel" instance=ExtResource("11_or1m0")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="HelpMenu" parent="UI/BackgroundPanel" instance=ExtResource("13_2ul3x")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -361,9 +355,9 @@ material = SubResource("ShaderMaterial_7hynb")
 position = Vector2(-34, -1042)
 emitting = false
 amount = 96
+texture = ExtResource("7_hvaii")
 lifetime = 2.2
 speed_scale = 1.2
-texture = ExtResource("7_hvaii")
 gravity = Vector2(0, -400)
 scale_amount_min = 22.0
 scale_amount_max = 22.0
@@ -377,9 +371,9 @@ self_modulate = Color(1, 1, 1, 0.462745)
 material = SubResource("ShaderMaterial_16q8p")
 position = Vector2(514, 515)
 emitting = false
+texture = ExtResource("7_hvaii")
 lifetime = 2.4
 speed_scale = 0.4
-texture = ExtResource("7_hvaii")
 gravity = Vector2(0, 0)
 scale_amount_min = 240.0
 scale_amount_max = 240.0
@@ -556,3 +550,5 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("46_20f0m")
 sample_size = 1024
+magnitude_cutoff_breathing = 10.0
+magnitude_cutoff_heart = 10.0

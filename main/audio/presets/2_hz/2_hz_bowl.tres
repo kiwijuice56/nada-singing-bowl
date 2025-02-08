@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BowlPreset" load_steps=6 format=3 uid="uid://df1dlrhhb6elh"]
 
 [ext_resource type="Shader" uid="uid://d4sj0yuhk40x" path="res://main/visuals/session_visual/Bineural.tres" id="1_hosna"]
-[ext_resource type="Script" path="res://main/audio/BowlPreset.gd" id="2_mdyeu"]
+[ext_resource type="Script" uid="uid://degvokjofbxrr" path="res://main/audio/BowlPreset.gd" id="2_mdyeu"]
 [ext_resource type="AudioStream" uid="uid://sydbwaf3a1n4" path="res://main/audio/presets/2_hz/delta_sustain.ogg" id="3_scytk"]
 [ext_resource type="AudioStream" uid="uid://3gow2bxc6hsc" path="res://main/audio/presets/2_hz/delta_transition_in.ogg" id="4_pu5vn"]
 [ext_resource type="AudioStream" uid="uid://b7p8rv3o3vdjc" path="res://main/audio/presets/2_hz/delta_transition_out.ogg" id="5_lftl4"]

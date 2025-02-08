@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cyt47kwsgktw2"]
 
 [ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_7pyh1"]
-[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/SettingsMenu.gd" id="2_c1okb"]
+[ext_resource type="Script" uid="uid://b2lqefdgtuo78" path="res://main/user_interface/menu/settings_menu/SettingsMenu.gd" id="2_c1okb"]
 [ext_resource type="Texture2D" uid="uid://didlgakwbdgjv" path="res://main/user_interface/icons/close.png" id="3_lsd8h"]
 [ext_resource type="Texture2D" uid="uid://b0wdylpv3tbne" path="res://main/user_interface/icons/circle.png" id="3_ty2te"]
 [ext_resource type="PackedScene" uid="uid://blwmd7u688yg" path="res://main/user_interface/menu/settings_menu/BowlSelector.tscn" id="5_ntpyq"]
@@ -29,7 +29,7 @@ theme_override_constants/margin_bottom = 96
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 24
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -41,13 +41,12 @@ theme_override_constants/shadow_offset_y = 6
 theme_override_constants/shadow_outline_size = 13
 theme_override_font_sizes/font_size = 100
 text = "
-Settings
-
-"
+Settings"
 horizontal_alignment = 1
 
 [node name="SessionDurationContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="SettingTitle" type="Label" parent="MarginContainer/VBoxContainer/SessionDurationContainer"]
 custom_minimum_size = Vector2(500, 0)
@@ -124,6 +123,52 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/shadow_outline_size = 13
 text = "3:00"
 horizontal_alignment = 1
+
+[node name="NumericalReadingsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 76
+text = "Numerical Readings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="OffLabel" type="Label" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 42
+text = "Off"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+flat = true
+
+[node name="OnLabel" type="Label" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 42
+text = "On"
 
 [node name="VolumeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false

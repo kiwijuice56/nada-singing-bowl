@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://c3nu6i7da3wrw"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://c3nu6i7da3wrw"]
 
 [ext_resource type="FontFile" uid="uid://h7yr3buncrhq" path="res://main/user_interface/font/Poppins-Regular.ttf" id="1_d7723"]
+[ext_resource type="Texture2D" uid="uid://ckg2k6g22ojg" path="res://main/user_interface/icons/button_on.png" id="1_noc4b"]
+[ext_resource type="Texture2D" uid="uid://cb4j4m5cpanye" path="res://main/user_interface/icons/button_off.png" id="2_twjiu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvxkp"]
 
@@ -123,6 +125,8 @@ Button/styles/focus = SubResource("StyleBoxEmpty_cvxkp")
 Button/styles/hover = SubResource("StyleBoxFlat_oillf")
 Button/styles/normal = SubResource("StyleBoxFlat_qm38q")
 Button/styles/pressed = SubResource("StyleBoxFlat_hobsx")
+CheckButton/icons/checked = ExtResource("1_noc4b")
+CheckButton/icons/unchecked = ExtResource("2_twjiu")
 HScrollBar/styles/grabber = SubResource("StyleBoxTexture_ta7fw")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ta7fw")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ta7fw")

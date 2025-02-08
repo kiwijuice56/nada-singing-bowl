@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://blwmd7u688yg"]
 
 [ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="1_lqy8q"]
-[ext_resource type="Script" path="res://main/user_interface/menu/settings_menu/BowlSelector.gd" id="2_3faxb"]
+[ext_resource type="Script" uid="uid://dewglfgkvsubx" path="res://main/user_interface/menu/settings_menu/BowlSelector.gd" id="2_3faxb"]
 [ext_resource type="PackedScene" uid="uid://deibi4wa7vkqn" path="res://main/user_interface/menu/settings_menu/BowlOption.tscn" id="3_qwrpd"]
-[ext_resource type="Shader" path="res://main/visuals/Ring.gdshader" id="4_3qim5"]
+[ext_resource type="Shader" uid="uid://btlmcehimppfr" path="res://main/visuals/Ring.gdshader" id="4_3qim5"]
 [ext_resource type="AudioStream" uid="uid://dd5k10o7hduvd" path="res://main/audio/sound_effects/tap1.ogg" id="5_lgv4j"]
 [ext_resource type="AudioStream" uid="uid://cwcbwjyjp4icr" path="res://main/audio/sound_effects/tap2.ogg" id="6_sf2ix"]
 [ext_resource type="AudioStream" uid="uid://0mif8x7f7s57" path="res://main/audio/sound_effects/tap3.ogg" id="7_7uiqb"]
@@ -22,11 +22,8 @@ shader_parameter/use_gradient = true
 random_pitch = 1.4
 streams_count = 3
 stream_0/stream = ExtResource("5_lgv4j")
-stream_0/weight = 1.0
 stream_1/stream = ExtResource("6_sf2ix")
-stream_1/weight = 1.0
 stream_2/stream = ExtResource("7_7uiqb")
-stream_2/weight = 1.0
 
 [node name="BowlSelector" type="Control"]
 layout_mode = 3
@@ -75,7 +72,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 22
+theme_override_constants/separation = 16
 
 [node name="SettingTitle" type="Label" parent="Internal/VBoxContainer"]
 custom_minimum_size = Vector2(0, 128)
@@ -94,8 +91,8 @@ custom_minimum_size = Vector2(1280, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0.172549, 0.156863, 0.223529, 0.313726)
-theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_outline_size = 13
 bbcode_enabled = true
 text = "[center]Sun Plexus Chakra: Loolrem ldkfjksdfl Ispulmd fLSljd f jldfslj sdkljflkd;fjsd fkdlf sjkldfjls;kdflkj[/center]"
@@ -104,5 +101,5 @@ fit_content = true
 [node name="ChimePlayer" type="AudioStreamPlayer" parent="Internal"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_bahk5")
-volume_db = -18.0
+volume_db = -12.0
 pitch_scale = 2.0

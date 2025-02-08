@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://sq36xvbyl8gc"]
 
 [ext_resource type="Texture2D" uid="uid://c5sfdx7yqxxfr" path="res://main/user_interface/icons/heart.png" id="1_0dmbk"]
-[ext_resource type="Script" path="res://main/user_interface/widget/RateWidget.gd" id="2_h5341"]
+[ext_resource type="Script" uid="uid://cb1d1q8g44ifd" path="res://main/user_interface/widget/RateWidget.gd" id="2_h5341"]
 [ext_resource type="PackedScene" uid="uid://be6hip15thutp" path="res://main/user_interface/widget/rate_ring/RateRing.tscn" id="3_wigdh"]
 
 [sub_resource type="Animation" id="Animation_d650v"]
@@ -57,8 +57,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hve7j"]
 _data = {
-"RESET": SubResource("Animation_d650v"),
-"beat": SubResource("Animation_ufxdk")
+&"RESET": SubResource("Animation_d650v"),
+&"beat": SubResource("Animation_ufxdk")
 }
 
 [node name="RateWidget" type="TextureRect"]

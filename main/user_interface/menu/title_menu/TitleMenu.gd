@@ -4,10 +4,8 @@ extends Menu
 func _ready() -> void:
 	%InfoButton.pressed.connect(_on_info_button_pressed)
 	%SettingsButton.pressed.connect(_on_settings_button_pressed)
-	%HelpButton.pressed.connect(_on_help_button_pressed)
 	get_parent().get_node("%SettingsMenu").exited.connect(_on_submenu_exited)
 	get_parent().get_node("%InfoMenu").exited.connect(_on_submenu_exited)
-	get_parent().get_node("%HelpMenu").exited.connect(_on_submenu_exited)
 	get_parent().get_node("%Ambiance").enter()
 
 func _on_submenu_exited() -> void:
@@ -23,11 +21,6 @@ func _on_settings_button_pressed() -> void:
 	await exit()
 	await get_parent().get_node("%BackgroundPanel").enter()
 	await get_parent().get_node("%SettingsMenu").enter()
-
-func _on_help_button_pressed() -> void:
-	await exit(true)
-	await get_parent().get_node("%BackgroundPanel").enter()
-	await get_parent().get_node("%HelpMenu").enter()
 
 # Show this menu.
 func enter(show_circle_input: bool = false) -> void:
