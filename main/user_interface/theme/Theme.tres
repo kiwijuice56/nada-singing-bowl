@@ -118,7 +118,6 @@ corner_radius_bottom_left = 12
 base_font = ExtResource("1_d7723")
 
 [resource]
-default_base_scale = 16.0
 default_font = SubResource("FontVariation_nllcr")
 default_font_size = 64
 Button/styles/focus = SubResource("StyleBoxEmpty_cvxkp")

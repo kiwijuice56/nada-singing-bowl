@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://rvy4ai41rle2"]
+[gd_scene load_steps=73 format=3 uid="uid://rvy4ai41rle2"]
 
 [ext_resource type="Script" uid="uid://b286iib7yuiet" path="res://main/Main.gd" id="1_p1kf2"]
 [ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="2_0wdta"]
@@ -23,7 +23,6 @@
 [ext_resource type="Theme" uid="uid://c3nu6i7da3wrw" path="res://main/user_interface/theme/Theme.tres" id="16_ijllg"]
 [ext_resource type="Shader" uid="uid://whlav6d013y7" path="res://main/visuals/ambiance/Rays.gdshader" id="17_ic44v"]
 [ext_resource type="Script" uid="uid://b2g4yb1tbt61i" path="res://main/audio/SingingBowl.gd" id="17_jom3w"]
-[ext_resource type="Script" uid="uid://bmoa7os1uq6h5" path="res://main/user_interface/EndLabel.gd" id="17_lyd3c"]
 [ext_resource type="Script" uid="uid://crb2f7710hxjv" path="res://main/user_interface/PhotosensitiveWarning.gd" id="20_857ea"]
 [ext_resource type="Texture2D" uid="uid://dsbrjcdp2bp8x" path="res://main/user_interface/icons/crystal.png" id="21_p7q3d"]
 [ext_resource type="Resource" uid="uid://d0a2erywnv5n" path="res://main/audio/presets/396_hz/396_hz_bowl.tres" id="22_l8mmf"]
@@ -32,11 +31,13 @@
 [ext_resource type="AudioStream" uid="uid://crvwfc4x3jvdc" path="res://main/audio/sound_effects/menu2.ogg" id="23_b3f5e"]
 [ext_resource type="Resource" uid="uid://ct428xyl1jgu0" path="res://main/audio/presets/528_hz/528_hz_bowl.tres" id="24_edufn"]
 [ext_resource type="Script" uid="uid://droqhym8j2x55" path="res://main/user_interface/menu/widget_container/WidgetContainer.gd" id="25_tpfcj"]
+[ext_resource type="Script" uid="uid://bi18tvxmqy2wh" path="res://main/user_interface/menu/end_menu/EndMenu.gd" id="25_x8ve0"]
 [ext_resource type="Resource" uid="uid://pyebb3avgmog" path="res://main/audio/presets/639_hz/639_hz_bowl.tres" id="25_xujyc"]
 [ext_resource type="PackedScene" uid="uid://sq36xvbyl8gc" path="res://main/user_interface/widget/RateWidget.tscn" id="26_c5c5k"]
 [ext_resource type="Resource" uid="uid://bdqnmg5c2rqul" path="res://main/audio/presets/741_hz/741_hz_bowl.tres" id="26_km7n0"]
 [ext_resource type="Texture2D" uid="uid://c2nwango0vxn6" path="res://main/user_interface/icons/breathing.png" id="27_4q47c"]
 [ext_resource type="Resource" uid="uid://cpcmscuma524t" path="res://main/audio/presets/852_hz/852_hz_bowl.tres" id="27_8u33j"]
+[ext_resource type="Texture2D" uid="uid://bb4755siuk3y0" path="res://main/user_interface/menu/end_menu/chart.png" id="27_i8832"]
 [ext_resource type="Resource" uid="uid://bvy75p143q2bu" path="res://main/audio/presets/432_hz/432_hz_bowl.tres" id="28_ck2w0"]
 [ext_resource type="Resource" uid="uid://cbboosmrw7jvp" path="res://main/audio/presets/963_hz/963_hz_bowl.tres" id="28_wjkqw"]
 [ext_resource type="Resource" uid="uid://df1dlrhhb6elh" path="res://main/audio/presets/2_hz/2_hz_bowl.tres" id="29_aphwp"]
@@ -348,6 +349,7 @@ resonance_rate = 0.5
 deresonance_rate = 0.3
 resonance_threshold_upper = 0.65
 resonance_threshold_lower = 0.4
+transition_time = 0.2
 
 [node name="TouchParticles" type="CPUParticles2D" parent="UI/CircleContainer/CircleInput"]
 unique_name_in_owner = true
@@ -412,32 +414,112 @@ pitch_scale = 1.1
 unique_name_in_owner = true
 stream = ExtResource("22_tc6y4")
 
-[node name="EndLabel" type="Label" parent="UI"]
+[node name="EndMenu" type="MarginContainer" parent="UI"]
 unique_name_in_owner = true
 visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("16_ijllg")
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 96
+script = ExtResource("25_x8ve0")
+transition_time = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 96
+
+[node name="EndLabel" type="Label" parent="UI/EndMenu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("16_ijllg")
+text = "
+Session completed"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/EndMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Max" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "120"
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -312.5
-offset_top = -92.5
-offset_right = 312.5
-offset_bottom = 92.5
+offset_left = -69.5
+offset_top = -30.0
+offset_right = 69.5
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("16_ijllg")
-text = "Session completed. 
-Release your finger.
+rotation = -1.5708
+theme_override_font_sizes/font_size = 42
+text = "bpm"
 
+[node name="Min" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 42
+text = "0"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/EndMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
 
+[node name="ChartLine" type="TextureRect" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("27_i8832")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 
-"
-horizontal_alignment = 1
-script = ExtResource("17_lyd3c")
-transition_time = 0.3
+[node name="Label" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 42
+text = "time (sec)"
+
+[node name="Max" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 42
+text = "120"
+
+[node name="ContinueButton" type="Button" parent="UI/EndMenu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 76
+text = "Continue"
 
 [node name="WidgetContainer" type="MarginContainer" parent="UI"]
 unique_name_in_owner = true
@@ -453,6 +535,7 @@ theme_override_constants/margin_left = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 script = ExtResource("25_tpfcj")
+transition_time = 0.2
 
 [node name="HeartRateWidget" parent="UI/WidgetContainer" node_paths=PackedStringArray("bpm_label", "sensor") instance=ExtResource("26_c5c5k")]
 unique_name_in_owner = true

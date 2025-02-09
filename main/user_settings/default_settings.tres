@@ -8,4 +8,5 @@ version = ""
 volume = 0.0
 session_duration = 120.0
 bowl_type = 4
+numerical_readings = true
 first_opened_app = true

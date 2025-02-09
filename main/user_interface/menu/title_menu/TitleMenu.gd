@@ -54,8 +54,7 @@ func exit_session_started() -> void:
 	exited.emit()
 
 func enter_session_ended() -> void:
-	get_parent().get_node("%Ambiance").enter()
-	
+	get_parent().get_node("%CircleInput").enter(true)
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, transition_time)
 	await tween.finished

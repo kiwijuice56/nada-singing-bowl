@@ -22,6 +22,9 @@ var breathing_sample_size: int
 var max_sample_size: int
 var samples_taken: int = 0
 
+var heart_rates: Array[float]
+var breathing_rates: Array[float]
+
 signal rates_updated(heart_rate: float, breathing_rate: float)
 
 func _ready() -> void:
@@ -60,15 +63,21 @@ func calculate_rates() -> void:
 	else:
 		rates_updated.emit(heart_rate, breath_rate)
 	
+	heart_rates.append(heart_rate)
+	breathing_rates.append(breath_rate)
+	
 	print(heart_info, " ", breath_info)
 
 func start_detection() -> void:
+	heart_rates = []
+	breathing_rates = []
 	reset()
 	set_physics_process(true)
 
 func stop_detection() -> void:
 	set_physics_process(false)
 
+# Resets current samples only, not history of HR/BR
 func reset() -> void:
 	heart_sample_size = HeartRateAlgorithm.GetActualSampleSize(sample_size)
 	breathing_sample_size = BreathingRateAlgorithm.GetActualSampleSize(sample_size)

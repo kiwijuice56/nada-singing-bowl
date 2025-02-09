@@ -47,12 +47,17 @@ func main():
 		%BiofeedbackLayer.stop()
 		%PhysiologySensor.stop_detection()
 		
-		# End of session sequence.
-		await %EndLabel.enter()
-		await get_tree().create_timer(5.0).timeout
 		await %CircleInput.resonance_stopped
-		await %EndLabel.exit()
+		
+		# End of session sequence.
 		%WidgetContainer.exit()
+		await %CircleInput.exit(true)
+		
+		%Ambiance.enter()
+		
+		await %EndMenu.enter()
+		await %EndMenu.exited
+		
 		# Restart the loop, open the title menu.
 		await %TitleMenu.enter_session_ended()
 
