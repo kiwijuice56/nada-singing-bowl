@@ -20,7 +20,6 @@ func add_points() -> void:
 	var point_a: Sprite2D = end_point.instantiate()
 	get_parent().add_child(point_a)
 	
-	
 	var point_b: Sprite2D = end_point.instantiate()
 	get_parent().add_child(point_b)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://rvy4ai41rle2"]
+[gd_scene load_steps=75 format=3 uid="uid://rvy4ai41rle2"]
 
 [ext_resource type="Script" uid="uid://b286iib7yuiet" path="res://main/Main.gd" id="1_p1kf2"]
 [ext_resource type="Shader" uid="uid://oqgngipnnhw7" path="res://main/visuals/session_visual/396_hz.tres" id="2_0wdta"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://c2nwango0vxn6" path="res://main/user_interface/icons/breathing.png" id="27_4q47c"]
 [ext_resource type="Resource" uid="uid://cpcmscuma524t" path="res://main/audio/presets/852_hz/852_hz_bowl.tres" id="27_8u33j"]
 [ext_resource type="Texture2D" uid="uid://bb4755siuk3y0" path="res://main/user_interface/menu/end_menu/chart.png" id="27_i8832"]
+[ext_resource type="Script" uid="uid://crahnfr7xd7k3" path="res://main/user_interface/menu/end_menu/plot/Plot.gd" id="27_mwi54"]
+[ext_resource type="PackedScene" uid="uid://dnh1b0s71ev0p" path="res://main/user_interface/menu/end_menu/plot/PlotPoint.tscn" id="28_5eftm"]
 [ext_resource type="Resource" uid="uid://bvy75p143q2bu" path="res://main/audio/presets/432_hz/432_hz_bowl.tres" id="28_ck2w0"]
 [ext_resource type="Resource" uid="uid://cbboosmrw7jvp" path="res://main/audio/presets/963_hz/963_hz_bowl.tres" id="28_wjkqw"]
 [ext_resource type="Resource" uid="uid://df1dlrhhb6elh" path="res://main/audio/presets/2_hz/2_hz_bowl.tres" id="29_aphwp"]
@@ -416,7 +418,6 @@ stream = ExtResource("22_tc6y4")
 
 [node name="EndMenu" type="MarginContainer" parent="UI"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -456,7 +457,7 @@ layout_mode = 2
 [node name="Max" type="Label" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
-text = "120"
+text = "130"
 horizontal_alignment = 2
 
 [node name="Control" type="Control" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -492,11 +493,27 @@ text = "0"
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="ChartLine" type="TextureRect" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Plot" type="TextureRect" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("27_i8832")
+script = ExtResource("27_mwi54")
+plot_point_scene = ExtResource("28_5eftm")
+
+[node name="PlotPoint" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2/Plot" instance=ExtResource("28_5eftm")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -23.0
+offset_top = 795.0
+offset_right = 77.0
+offset_bottom = 895.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/EndMenu/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2

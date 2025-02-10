@@ -24,6 +24,7 @@ var samples_taken: int = 0
 
 var heart_rates: Array[float]
 var breathing_rates: Array[float]
+var timestamps: Array[float]
 
 signal rates_updated(heart_rate: float, breathing_rate: float)
 
@@ -65,17 +66,21 @@ func calculate_rates() -> void:
 	
 	heart_rates.append(heart_rate)
 	breathing_rates.append(breath_rate)
+	timestamps.append(Time.get_unix_time_from_system())
 	
 	print(heart_info, " ", breath_info)
 
 func start_detection() -> void:
 	heart_rates = []
 	breathing_rates = []
+	timestamps = []
+	timestamps.append(Time.get_unix_time_from_system())
 	reset()
 	set_physics_process(true)
 
 func stop_detection() -> void:
 	set_physics_process(false)
+	timestamps.append(Time.get_unix_time_from_system())
 
 # Resets current samples only, not history of HR/BR
 func reset() -> void:
