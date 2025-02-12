@@ -68,10 +68,11 @@ func calculate_rates() -> void:
 		rates_updated.emit(-1, -1)
 	else:
 		rates_updated.emit(heart_rate, breath_rate)
-	
-	heart_rates.append(heart_rate)
-	breathing_rates.append(breath_rate)
-	timestamps.append(Time.get_unix_time_from_system())
+		
+		if heart_rate > 0 and breath_rate > 0:
+			heart_rates.append(heart_rate)
+			breathing_rates.append(breath_rate)
+			timestamps.append(Time.get_unix_time_from_system())
 	
 	print(heart_info, " ", breath_info, " ", timestamps[-1])
 

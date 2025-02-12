@@ -37,7 +37,7 @@ func _on_period_complete() -> void:
 	new_ring.start()
 
 func _on_rates_updated(heart_rate: float, breathing_rate: float) -> void:
-	if heart_rate < 0 or breathing_rate < 0:
+	if heart_rate <= 0 or breathing_rate <= 0:
 		show_invalid_reading()
 		return
 	
