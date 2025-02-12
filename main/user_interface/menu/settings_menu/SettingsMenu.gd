@@ -46,15 +46,16 @@ func load_settings(settings: UserSettings):
 	_on_duration_changed(int(settings.session_duration))
 	%VolumeSlider.value = settings.volume
 	%BowlSelector.index = settings.bowl_type
+	%PhysReadingsButton.button_pressed = settings.phys_readings
 
 # Save values from UI components onto storage.
 func save_settings():
 	settings_resource.session_duration = %DurationSlider.value 
 	settings_resource.volume = %VolumeSlider.value 
 	settings_resource.bowl_type = %BowlSelector.index
+	settings_resource.phys_readings = %PhysReadingsButton.button_pressed
 	
 	ResourceSaver.save(settings_resource, "user://settings.tres")
-
 
 func choice_selected(parent: Container, selected_index: int) -> void:
 	for i in range(parent.get_child_count()):

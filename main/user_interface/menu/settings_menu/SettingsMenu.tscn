@@ -137,7 +137,7 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/shadow_outline_size = 13
 theme_override_font_sizes/font_size = 76
-text = "Numerical Readings"
+text = "Physiological Readings"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer"]
 layout_mode = 2
@@ -152,11 +152,13 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 42
-text = "Off"
+text = "Disabled"
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
+[node name="PhysReadingsButton" type="CheckButton" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+button_pressed = true
 flat = true
 
 [node name="OnLabel" type="Label" parent="MarginContainer/VBoxContainer/NumericalReadingsContainer/HBoxContainer"]
@@ -168,7 +170,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 42
-text = "On"
+text = "Enabled"
 
 [node name="VolumeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false

@@ -47,16 +47,22 @@ func main():
 		%BiofeedbackLayer.stop()
 		%PhysiologySensor.stop_detection()
 		
-		await %CircleInput.resonance_stopped
-		
 		# End of session sequence.
 		%WidgetContainer.exit()
-		await %CircleInput.exit(true)
 		
+		%EndMenu.initialize(false)
+		await %EndMenu.enter()
+		await get_tree().create_timer(5.0).timeout
+		await %CircleInput.resonance_stopped
+		await %EndMenu.exit()
 		%Ambiance.enter()
 		
-		await %EndMenu.enter()
-		await %EndMenu.exited
+		if settings.phys_readings:
+			%EndMenu.initialize(true)
+			await %CircleInput.exit(true)
+			%EndMenu.get_node("%Plot").plot(%PhysiologySensor.timestamps, %PhysiologySensor.heart_rates, %PhysiologySensor.breathing_rates)
+			await %EndMenu.enter() 
+			await %EndMenu.exited # with continue button
 		
 		# Restart the loop, open the title menu.
 		await %TitleMenu.enter_session_ended()

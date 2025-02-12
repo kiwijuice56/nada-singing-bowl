@@ -38,6 +38,8 @@ func _physics_process(_delta: float) -> void:
 	if samples_taken < heart_sample_size:
 		accelerometer_heart.append(accel)
 		gyroscope_heart.append(gyro)
+		
+		%ReadingLabel.text = str(accel) + " " + str(gyro)
 	
 	if samples_taken < breathing_sample_size:
 		accelerometer_breath.append(accel)
@@ -53,6 +55,9 @@ func _physics_process(_delta: float) -> void:
 		reset()
 
 func calculate_rates() -> void:
+	if not %SettingsMenu.settings_resource.phys_readings:
+		return
+	
 	var heart_info: Dictionary = HeartRateAlgorithm.Analyze(accelerometer_heart, gyroscope_heart, false, {}, true)
 	var breath_info: Dictionary = BreathingRateAlgorithm.Analyze(accelerometer_breath, gyroscope_breath, false, {}, true)
 	
@@ -68,7 +73,7 @@ func calculate_rates() -> void:
 	breathing_rates.append(breath_rate)
 	timestamps.append(Time.get_unix_time_from_system())
 	
-	print(heart_info, " ", breath_info)
+	print(heart_info, " ", breath_info, " ", timestamps[-1])
 
 func start_detection() -> void:
 	heart_rates = []
