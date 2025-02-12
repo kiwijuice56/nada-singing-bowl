@@ -23,6 +23,7 @@ var drag_end: Vector2
 var dragging: bool = false
 
 func _ready() -> void:
+	set_process_input(false)
 	# Create buttons from the presets available.
 	for preset in get_tree().get_root().get_node("Main/SingingBowl").preset_mappings:
 		var new_option: BowlOption = bowl_option_scene.instantiate()
@@ -35,11 +36,6 @@ func _ready() -> void:
 	update_selected.call_deferred(-1)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_left", false):
-		index -= 1
-	if event.is_action_pressed("ui_right", false):
-		index += 1
-	
 	if event is InputEventScreenTouch:
 		drag_start = event.position
 		if event.is_released():

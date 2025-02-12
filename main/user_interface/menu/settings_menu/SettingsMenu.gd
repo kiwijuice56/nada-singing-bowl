@@ -31,10 +31,12 @@ func _on_exit_pressed() -> void:
 
 func enter() -> void:
 	load_settings(settings_resource)
+	%BowlSelector.set_process_input(true)
 	await super.enter()
 
 func exit() -> void:
 	save_settings()
+	%BowlSelector.set_process_input(false)
 	await super.exit()
 
 func get_settings() -> UserSettings:
