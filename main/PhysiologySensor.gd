@@ -6,8 +6,8 @@ extends Node
 
 @export var sample_size: int 
 
-@export var magnitude_cutoff_breathing: float = 15.0
-@export var magnitude_cutoff_heart: float = 100.0
+@export var kurtosis_cutoff_breathing: float = 0.0
+@export var kurtosis_cutoff_heart: float = 0.0
 
 # The heart/breath arrays hold much of the same values, but usually have slightly different
 # sample sizes; We could store this data in two arrays and then slice them before analyzing,
@@ -58,13 +58,13 @@ func calculate_rates() -> void:
 	if not %SettingsMenu.settings_resource.phys_readings:
 		return
 	
-	var heart_info: Dictionary = HeartRateAlgorithm.Analyze(accelerometer_heart, gyroscope_heart, false, {}, true)
-	var breath_info: Dictionary = BreathingRateAlgorithm.Analyze(accelerometer_breath, gyroscope_breath, false, {}, true)
+	var heart_info: Dictionary = HeartRateAlgorithm.Analyze(accelerometer_heart, gyroscope_heart, false)
+	var breath_info: Dictionary = BreathingRateAlgorithm.Analyze(accelerometer_breath, gyroscope_breath, false)
 	
 	var heart_rate: float = heart_info["rate"]
 	var breath_rate: float = breath_info["rate"]
 	
-	if not is_valid_reading(heart_info["magnitude"], magnitude_cutoff_heart) or not is_valid_reading(breath_info["magnitude"], magnitude_cutoff_breathing):
+	if not is_valid_reading(heart_info["kurtosis"], kurtosis_cutoff_heart) or not is_valid_reading(breath_info["kurtosis"], kurtosis_cutoff_breathing):
 		rates_updated.emit(-1, -1)
 	else:
 		rates_updated.emit(heart_rate, breath_rate)
@@ -101,5 +101,5 @@ func reset() -> void:
 	accelerometer_breath = []
 	gyroscope_breath = []
 
-func is_valid_reading(rate_magnitude: float, cutoff: float) -> bool:
-	return not is_nan(rate_magnitude) and not rate_magnitude < cutoff
+func is_valid_reading(kurtosis: float, cutoff: float) -> bool:
+	return not is_nan(kurtosis) and not kurtosis < cutoff
